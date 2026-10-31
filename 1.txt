@@ -1,198 +1,189 @@
-[2026.10.31-02.37.24:588][575]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_Base_GodRay_C /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.BP_Base_GodRay_C_0 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:588][575]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_Base_GodRay_C /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.BP_Base_GodRay_C_1 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:588][575]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_Base_GodRay_C /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.BP_Base_GodRay_C_2 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:588][575]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_Base_GodRay_C /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.BP_Base_GodRay_C_3 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:588][575]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_Character_C /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.BP_Character_C_0 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:588][575]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_PostProcess_Env_C /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.BP_PostProcess_Env_C_0 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:589][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_ScreenAlignedBackground_C /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.BP_ScreenAlignedBackground_C_2 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:589][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_ShowCase_Sky_C /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.BP_ShowCase_Sky_C_0 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:589][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_VFX_Wardrobe_C /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.BP_VFX_Wardrobe_C_1 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:589][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_0 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:589][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_1 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:589][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_2 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:589][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_48 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:589][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_49 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:589][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_50 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:589][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_51 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:589][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_52 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:590][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): NzWorldSettings /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.NzWorldSettings Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:590][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): NzWorldSettings /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.NzWorldSettings Frequency=10.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:590][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): PointLight /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.PointLight_1 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:590][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): PointLight /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.PointLight_2 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:590][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): SpotLight /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.SpotLight_1 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:590][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): SpotLight /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.SpotLight_2 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:590][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): StaticMeshActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.StaticMeshActor_0 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:590][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): StaticMeshActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.StaticMeshActor_1 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:590][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): StaticMeshActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.StaticMeshActor_10 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:590][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): StaticMeshActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.StaticMeshActor_11 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:590][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): StaticMeshActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.StaticMeshActor_2 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:590][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): StaticMeshActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.StaticMeshActor_4 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:590][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): Showcase_GWave_NewV2_C /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Default__Showcase_GWave_NewV2_C Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:590][576]LogNet: Verbose: AActor::SetNetUpdateFrequency(): Showcase_GWave_NewV2_C /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.Showcase_GWave_New1_C_1 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.24:592][576]LogDLSSNGXRHI: Creating   NGX DLSS Feature  SrcRect=[0x0->768x432], DestRect=[0x0->1536x864], ScaleX=0.500000, ScaleY=0.500000, NGXDLSSPreset=Invalid NVSDK_NGX_DLSS_Hint_Render_Preset(5), NGXDLSSRRPreset=Preset E(5), NGXPerfQuality=MaxPerf(0), bUseAutoExposure=1, bEnableAlphaUpscaling=0, bReleaseMemoryOnDelete=1, GPUNode=0, GPUVisibility=0x1, DenoiseMode=Off
-[2026.10.31-02.37.24:607][577]LogElectraPlayer: [00000000BA0820E0][000000023C34D750] Jump in play position from 3.772 to 9.063
-[2026.10.31-02.37.24:624][578]LogDLSSNGXRHI: Destroying NGX DLSS Feature SrcRect=[0x0->1536x864], DestRect=[0x0->1536x864], ScaleX=1.000000, ScaleY=1.000000, NGXDLSSPreset=Invalid NVSDK_NGX_DLSS_Hint_Render_Preset(5), NGXDLSSRRPreset=Preset E(5), NGXPerfQuality=DLAA(5), bUseAutoExposure=1, bEnableAlphaUpscaling=0, bReleaseMemoryOnDelete=1, GPUNode=0, GPUVisibility=0x1, DenoiseMode=Off
-[2026.10.31-02.37.24:804][596]LogReportSubsystem: Error: Report Message Error uuid:4d1b7b5bb0a6fda07deefc8ab02d9a15
-[2026.10.31-02.37.24:837][599]LogElectraPlayer: [00000000BA0820E0][000000023C34D750] Playback resumed at play position 9.063
-[2026.10.31-02.37.25:755][705]LogElectraPlayer: [00000000BA0820E0][000000023C34D750] Playback paused at play position 10.070
-[2026.10.31-02.37.25:755][705]LogElectraPlayer: [00000000BA0820E0][000000023C34D750] Playback reached end at play position 10.070
-[2026.10.31-02.37.25:755][705]LogElectraPlayer: [00000000BA0820E0][000000023C34D750] IMediaPlayer::Close()
-[2026.10.31-02.37.25:756][705]LogElectraPlayer: [00000000BA0820E0][000000023C34D750] Playback stopped. Last play position 10.070
-[2026.10.31-02.37.25:756][705]LogElectraPlayerPlugin: [000000023C7E3A10] IMediaPlayer::Open: Options@000000003BBB4B58
-[2026.10.31-02.37.25:756][705]LogElectraPlayer: [00000000BA0820E0][00000000FA986110] IMediaPlayer::Open(file://...)
-[2026.10.31-02.37.25:756][705]LogNet: Verbose: AActor::SetNetUpdateFrequency(): LevelSequenceActor /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.LevelSequenceActor_2147476055 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.37.26:019][743]LogElectraPlayer: [00000000BA0820E0][00000000FA986110] MP4 playlist reader: The mp4 at "file://..." is not fast-startable. Consider moving the 'moov' box in front of the 'mdat' for faster startup times.
-[2026.10.31-02.37.26:019][743]LogElectraPlayerPlugin: [000000023C7E3A10] IMediaControls::SetRate(1.000000)
-[2026.10.31-02.37.26:026][744]LogElectraPlayer: [00000000BA0820E0][00000000FA986110] Player switched video quality to 14859717 bps from 0 bps. 0 upswitches, 0 downswitches (0 drastic ones)
-[2026.10.31-02.37.26:188][767]LogElectraPlayer: [00000000BA0820E0][00000000FA986110] Playback started at play position 0.000
-[2026.10.31-02.37.26:188][767]LogElectraPlayer: [00000000BA0820E0][00000000FA986110] Playback resumed at play position 0.000
-[2026.10.31-02.37.30:396][373]LogElectraPlayer: [00000000BA0820E0][00000000FA986110] Playback paused at play position 4.310
-[2026.10.31-02.37.30:396][373]LogElectraPlayer: [00000000BA0820E0][00000000FA986110] Playback reached end at play position 4.310
-[2026.10.31-02.37.30:396][373]LogElectraPlayer: [00000000BA0820E0][00000000FA986110] IMediaPlayer::Close()
-[2026.10.31-02.37.30:396][373]LogElectraPlayer: [00000000BA0820E0][00000000FA986110] Playback stopped. Last play position 4.310
-[2026.10.31-02.37.30:396][373]LogElectraPlayerPlugin: [000000023C7E3A10] IMediaPlayer::Open: Options@00000000B5B5DBB8
-[2026.10.31-02.37.30:397][373]LogElectraPlayer: [00000000BA0820E0][000000002B973AD0] IMediaPlayer::Open(file://...)
-[2026.10.31-02.37.30:397][373]LogLaunch: : PerformSDKLogin
-[2026.10.31-02.37.30:398][373]LogLaunch: : UpdateWorldPhase. Phase=SdkLogin(5)
-[2026.10.31-02.37.30:398][373]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
-[2026.10.31-02.37.30:398][373]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
-[2026.10.31-02.37.30:400][373]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
-[2026.10.31-02.37.30:400][373]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
-[2026.10.31-02.37.30:400][373]LogMemory: USDKBridgeHelper::Login: Line=102, Start
-[2026.10.31-02.37.30:400][373]LogMemory: [Steven.Han]FApiInterface::Login: Line=44, Start
-[2026.10.31-02.37.30:400][373]LogTemp: UE start login inner
-[2026.10.31-02.37.30:415][373]LogTemp: UE login  Called!
-[2026.10.31-02.37.30:415][373]LogMemory: [Steven.Han]FApiInterface::Login: Line=61, End
-[2026.10.31-02.37.30:415][373]LogMemory: USDKBridgeHelper::Login: Line=104, End
-[2026.10.31-02.37.30:656][400]LogElectraPlayer: [00000000BA0820E0][000000002B973AD0] MP4 playlist reader: The mp4 at "file://..." is not fast-startable. Consider moving the 'moov' box in front of the 'mdat' for faster startup times.
-[2026.10.31-02.37.30:663][401]LogElectraPlayerPlugin: [000000023C7E3A10] IMediaControls::SetRate(1.000000)
-[2026.10.31-02.37.30:670][402]LogElectraPlayer: [00000000BA0820E0][000000002B973AD0] Player switched video quality to 15703149 bps from 0 bps. 0 upswitches, 0 downswitches (0 drastic ones)
-[2026.10.31-02.37.30:822][424]LogElectraPlayer: [00000000BA0820E0][000000002B973AD0] Playback started at play position 0.000
-[2026.10.31-02.37.30:822][424]LogElectraPlayer: [00000000BA0820E0][000000002B973AD0] Playback resumed at play position 0.000
-[2026.10.31-02.37.33:490][800]LogTemp: --------------  UE callback ------------------
-[2026.10.31-02.37.33:490][800]LogTemp: Warning: UE callback Result:
+[2026.10.31-19.45.26:732][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_0 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:732][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_1 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_2 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_48 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_49 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_50 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_51 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): CineCameraActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.CineCameraActor_52 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): NzWorldSettings /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.NzWorldSettings Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): NzWorldSettings /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.NzWorldSettings Frequency=10.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): PointLight /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.PointLight_1 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): PointLight /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.PointLight_2 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): SpotLight /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.SpotLight_1 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): SpotLight /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.SpotLight_2 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): StaticMeshActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.StaticMeshActor_0 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): StaticMeshActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.StaticMeshActor_1 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): StaticMeshActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.StaticMeshActor_10 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): StaticMeshActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.StaticMeshActor_11 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): StaticMeshActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.StaticMeshActor_2 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): StaticMeshActor /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.StaticMeshActor_4 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): Showcase_GWave_NewV2_C /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Default__Showcase_GWave_NewV2_C Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:733][541]LogNet: Verbose: AActor::SetNetUpdateFrequency(): Showcase_GWave_NewV2_C /Game/Nezha/Map/Core/ShowCase/Showcase_GWave_NewV2_LevelInstance_1.Showcase_GWave_NewV2:PersistentLevel.Showcase_GWave_New1_C_1 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.26:738][541]LogDLSSNGXRHI: Creating   NGX DLSS Feature  SrcRect=[0x0->768x432], DestRect=[0x0->1536x864], ScaleX=0.500000, ScaleY=0.500000, NGXDLSSPreset=Invalid NVSDK_NGX_DLSS_Hint_Render_Preset(5), NGXDLSSRRPreset=Preset E(5), NGXPerfQuality=MaxPerf(0), bUseAutoExposure=1, bEnableAlphaUpscaling=0, bReleaseMemoryOnDelete=1, GPUNode=0, GPUVisibility=0x1, DenoiseMode=Off
+[2026.10.31-19.45.26:749][542]LogElectraPlayer: [00000000B9BA5560][00000000DF24FC90] Jump in play position from 4.962 to 9.063
+[2026.10.31-19.45.26:769][543]LogDLSSNGXRHI: Destroying NGX DLSS Feature SrcRect=[0x0->1536x864], DestRect=[0x0->1536x864], ScaleX=1.000000, ScaleY=1.000000, NGXDLSSPreset=Invalid NVSDK_NGX_DLSS_Hint_Render_Preset(5), NGXDLSSRRPreset=Preset E(5), NGXPerfQuality=DLAA(5), bUseAutoExposure=1, bEnableAlphaUpscaling=0, bReleaseMemoryOnDelete=1, GPUNode=0, GPUVisibility=0x1, DenoiseMode=Off
+[2026.10.31-19.45.27:000][566]LogElectraPlayer: [00000000B9BA5560][00000000DF24FC90] Playback resumed at play position 9.063
+[2026.10.31-19.45.27:906][670]LogElectraPlayer: [00000000B9BA5560][00000000DF24FC90] Playback paused at play position 10.070
+[2026.10.31-19.45.27:906][670]LogElectraPlayer: [00000000B9BA5560][00000000DF24FC90] Playback reached end at play position 10.070
+[2026.10.31-19.45.27:907][670]LogElectraPlayer: [00000000B9BA5560][00000000DF24FC90] IMediaPlayer::Close()
+[2026.10.31-19.45.27:908][670]LogElectraPlayer: [00000000B9BA5560][00000000DF24FC90] Playback stopped. Last play position 10.070
+[2026.10.31-19.45.27:908][670]LogElectraPlayerPlugin: [00000000F33E7610] IMediaPlayer::Open: Options@00000000E0FB4B58
+[2026.10.31-19.45.27:908][670]LogElectraPlayer: [00000000B9BA5560][0000000034694C90] IMediaPlayer::Open(file://...)
+[2026.10.31-19.45.27:908][670]LogNet: Verbose: AActor::SetNetUpdateFrequency(): LevelSequenceActor /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.LevelSequenceActor_2147476055 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.45.28:191][711]LogElectraPlayer: [00000000B9BA5560][0000000034694C90] MP4 playlist reader: The mp4 at "file://..." is not fast-startable. Consider moving the 'moov' box in front of the 'mdat' for faster startup times.
+[2026.10.31-19.45.28:191][711]LogElectraPlayerPlugin: [00000000F33E7610] IMediaControls::SetRate(1.000000)
+[2026.10.31-19.45.28:198][712]LogElectraPlayer: [00000000B9BA5560][0000000034694C90] Player switched video quality to 14859717 bps from 0 bps. 0 upswitches, 0 downswitches (0 drastic ones)
+[2026.10.31-19.45.28:357][735]LogElectraPlayer: [00000000B9BA5560][0000000034694C90] Playback started at play position 0.000
+[2026.10.31-19.45.28:358][735]LogElectraPlayer: [00000000B9BA5560][0000000034694C90] Playback resumed at play position 0.000
+[2026.10.31-19.45.32:586][344]LogElectraPlayer: [00000000B9BA5560][0000000034694C90] Playback paused at play position 4.310
+[2026.10.31-19.45.32:586][344]LogElectraPlayer: [00000000B9BA5560][0000000034694C90] Playback reached end at play position 4.310
+[2026.10.31-19.45.32:587][344]LogElectraPlayer: [00000000B9BA5560][0000000034694C90] IMediaPlayer::Close()
+[2026.10.31-19.45.32:587][344]LogElectraPlayer: [00000000B9BA5560][0000000034694C90] Playback stopped. Last play position 4.310
+[2026.10.31-19.45.32:587][344]LogElectraPlayerPlugin: [00000000F33E7610] IMediaPlayer::Open: Options@00000000EB14B8A8
+[2026.10.31-19.45.32:587][344]LogElectraPlayer: [00000000B9BA5560][000000012CC5E910] IMediaPlayer::Open(file://...)
+[2026.10.31-19.45.32:587][344]LogLaunch: : PerformSDKLogin
+[2026.10.31-19.45.32:587][344]LogLaunch: : UpdateWorldPhase. Phase=SdkLogin(5)
+[2026.10.31-19.45.32:587][344]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
+[2026.10.31-19.45.32:587][344]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
+[2026.10.31-19.45.32:590][344]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
+[2026.10.31-19.45.32:591][344]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
+[2026.10.31-19.45.32:591][344]LogMemory: USDKBridgeHelper::Login: Line=102, Start
+[2026.10.31-19.45.32:591][344]LogMemory: [Steven.Han]FApiInterface::Login: Line=44, Start
+[2026.10.31-19.45.32:591][344]LogTemp: UE start login inner
+[2026.10.31-19.45.32:606][344]LogTemp: UE login  Called!
+[2026.10.31-19.45.32:607][344]LogMemory: [Steven.Han]FApiInterface::Login: Line=61, End
+[2026.10.31-19.45.32:608][344]LogMemory: USDKBridgeHelper::Login: Line=104, End
+[2026.10.31-19.45.32:839][371]LogElectraPlayer: [00000000B9BA5560][000000012CC5E910] MP4 playlist reader: The mp4 at "file://..." is not fast-startable. Consider moving the 'moov' box in front of the 'mdat' for faster startup times.
+[2026.10.31-19.45.32:839][371]LogElectraPlayerPlugin: [00000000F33E7610] IMediaControls::SetRate(1.000000)
+[2026.10.31-19.45.32:846][372]LogElectraPlayer: [00000000B9BA5560][000000012CC5E910] Player switched video quality to 15703149 bps from 0 bps. 0 upswitches, 0 downswitches (0 drastic ones)
+[2026.10.31-19.45.32:986][392]LogElectraPlayer: [00000000B9BA5560][000000012CC5E910] Playback started at play position 0.000
+[2026.10.31-19.45.32:986][392]LogElectraPlayer: [00000000B9BA5560][000000012CC5E910] Playback resumed at play position 0.000
+[2026.10.31-19.45.33:629][485]LogReportSubsystem: Error: Report Message Error uuid:4d1b7b5bb0a6fda07deefc8ab02d9a15
+[2026.10.31-19.45.35:687][772]LogTemp: --------------  UE callback ------------------
+[2026.10.31-19.45.35:688][772]LogTemp: Warning: UE callback Result:
  {"opcode":"LOGIN_SUCCESS","msg":"Login successful","data":{"userId":"1","userChannelId":"comwin","token":"local-bypass-token-4a7f9c2e","ticket":"local-bypass-ticket-77e1b0d5","target":1,"data":{"appId":10027,"channelId":"win","trackId":"10577529","deviceId":"2DDD22E2-C34C-ED40-9DB3-5B423B351034","advertisingId":"","language":"ru_RU","versionName":"1.0.0","versionCode":1}}}
-[2026.10.31-02.37.33:490][800]LogTemp: --------------  UE callback ------------------
-[2026.10.31-02.37.33:507][800]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=13, Start
-[2026.10.31-02.37.33:507][800]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=22, JsonResult={"opcode":"LOGIN_SUCCESS","msg":"Login successful","data":{"userId":"1","userChannelId":"comwin","token":"local-bypass-token-4a7f9c2e","ticket":"local-bypass-ticket-77e1b0d5","target":1,"data":{"appId":10027,"channelId":"win","trackId":"10577529","deviceId":"2DDD22E2-C34C-ED40-9DB3-5B423B351034","advertisingId":"","language":"ru_RU","versionName":"1.0.0","versionCode":1}}}
-[2026.10.31-02.37.33:507][800]LogSDKSubSystem: SDKSubSystem: OnSdkBridgeCallback: {"opcode":"LOGIN_SUCCESS","msg":"Login successful","data":{"userId":"1","userChannelId":"comwin","token":"local-bypass-token-4a7f9c2e","ticket":"local-bypass-ticket-77e1b0d5","target":1,"data":{"appId":10027,"channelId":"win","trackId":"10577529","deviceId":"2DDD22E2-C34C-ED40-9DB3-5B423B351034","advertisingId":"","language":"ru_RU","versionName":"1.0.0","versionCode":1}}}
-[2026.10.31-02.37.33:507][800]LogSDKSubSystem: SDKSubSystem: LOGIN_SUCCESS. UserId=1 Target=1 ChannelId=win
-[2026.10.31-02.37.33:507][800]LogLaunch: : OnSDKLoginResponse. OpType=8 Msg=Login successful
-[2026.10.31-02.37.33:507][800]LogLaunch: : OnGmCheckResult disabled UpdateGray and TryEnableGmMode
-[2026.10.31-02.37.33:507][800]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
-[2026.10.31-02.37.33:507][800]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
-[2026.10.31-02.37.33:510][800]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
-[2026.10.31-02.37.33:510][800]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
-[2026.10.31-02.37.33:510][800]LogLaunch: : UpdateWorldPhase. Phase=PostLogin(6)
-[2026.10.31-02.37.33:510][800]LogMemory: USDKBridgeHelper::Placard: Line=226, Start
-[2026.10.31-02.37.33:510][800]LogMemory: [Steven.Han]FApiInterface::Placard: Line=353, Start
-[2026.10.31-02.37.33:514][800]LogTemp: UE Placard Called!
-[2026.10.31-02.37.33:514][800]LogMemory: [Steven.Han]FApiInterface::Placard: Line=370, End
-[2026.10.31-02.37.33:514][800]LogMemory: USDKBridgeHelper::Placard: Line=228, End
-[2026.10.31-02.37.33:515][800]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=26, End
-[2026.10.31-02.37.33:527][801]LogTemp: --------------  UE callback ------------------
-[2026.10.31-02.37.33:527][801]LogTemp: Warning: UE callback Result:
+[2026.10.31-19.45.35:688][772]LogTemp: --------------  UE callback ------------------
+[2026.10.31-19.45.35:706][772]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=13, Start
+[2026.10.31-19.45.35:706][772]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=22, JsonResult={"opcode":"LOGIN_SUCCESS","msg":"Login successful","data":{"userId":"1","userChannelId":"comwin","token":"local-bypass-token-4a7f9c2e","ticket":"local-bypass-ticket-77e1b0d5","target":1,"data":{"appId":10027,"channelId":"win","trackId":"10577529","deviceId":"2DDD22E2-C34C-ED40-9DB3-5B423B351034","advertisingId":"","language":"ru_RU","versionName":"1.0.0","versionCode":1}}}
+[2026.10.31-19.45.35:707][772]LogSDKSubSystem: SDKSubSystem: OnSdkBridgeCallback: {"opcode":"LOGIN_SUCCESS","msg":"Login successful","data":{"userId":"1","userChannelId":"comwin","token":"local-bypass-token-4a7f9c2e","ticket":"local-bypass-ticket-77e1b0d5","target":1,"data":{"appId":10027,"channelId":"win","trackId":"10577529","deviceId":"2DDD22E2-C34C-ED40-9DB3-5B423B351034","advertisingId":"","language":"ru_RU","versionName":"1.0.0","versionCode":1}}}
+[2026.10.31-19.45.35:707][772]LogSDKSubSystem: SDKSubSystem: LOGIN_SUCCESS. UserId=1 Target=1 ChannelId=win
+[2026.10.31-19.45.35:707][772]LogLaunch: : OnSDKLoginResponse. OpType=8 Msg=Login successful
+[2026.10.31-19.45.35:707][772]LogLaunch: : OnGmCheckResult disabled UpdateGray and TryEnableGmMode
+[2026.10.31-19.45.35:707][772]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
+[2026.10.31-19.45.35:708][772]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
+[2026.10.31-19.45.35:710][772]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
+[2026.10.31-19.45.35:710][772]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
+[2026.10.31-19.45.35:710][772]LogLaunch: : UpdateWorldPhase. Phase=PostLogin(6)
+[2026.10.31-19.45.35:710][772]LogMemory: USDKBridgeHelper::Placard: Line=226, Start
+[2026.10.31-19.45.35:711][772]LogMemory: [Steven.Han]FApiInterface::Placard: Line=353, Start
+[2026.10.31-19.45.35:714][772]LogTemp: UE Placard Called!
+[2026.10.31-19.45.35:714][772]LogMemory: [Steven.Han]FApiInterface::Placard: Line=370, End
+[2026.10.31-19.45.35:714][772]LogMemory: USDKBridgeHelper::Placard: Line=228, End
+[2026.10.31-19.45.35:714][772]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=26, End
+[2026.10.31-19.45.35:728][773]LogTemp: --------------  UE callback ------------------
+[2026.10.31-19.45.35:729][773]LogTemp: Warning: UE callback Result:
  {"opcode":"PLACARD","msg":"ok","data":[]}
-[2026.10.31-02.37.33:527][801]LogTemp: --------------  UE callback ------------------
-[2026.10.31-02.37.33:530][801]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=13, Start
-[2026.10.31-02.37.33:530][801]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=22, JsonResult={"opcode":"PLACARD","msg":"ok","data":[]}
-[2026.10.31-02.37.33:530][801]LogSDKSubSystem: SDKSubSystem: OnSdkBridgeCallback: {"opcode":"PLACARD","msg":"ok","data":[]}
-[2026.10.31-02.37.33:530][801]LogSDKSubSystem: SDKSubSystem: Placard callback received. Success=1 ItemCount=0
-[2026.10.31-02.37.33:530][801]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=26, End
-[2026.10.31-02.37.34:753][976]LogBackendOperation: LoadBackendOperationConfig loaded successfully
-[2026.10.31-02.37.34:754][977]LogBackendOperation: Error: LoadBackendOperationConfig SystemSwitch ID: 77 not found in ConfigDataManager
-[2026.10.31-02.37.34:754][977]LogNzUpdate: Get SystemSwitch Complete,change:1
-[2026.10.31-02.37.34:758][977]LogNzUpdate: UpdateConfigAndQueryVersion: cache CDN latest version CPPVersion: 1055461, AssetVersion: 0.3.17.18.51,  AssetPatchVersion: -1, CloudDocVersion: 1055461.19246237, UniqueVersion: 51, CompatibleUniqueVersion: 51
-[2026.10.31-02.37.34:758][977]LogLaunch: : Activation code verification started. RequestId=78c92a5d-4ba0-5b76-2f70-b6b026694bb3 OpenId=1 DeviceCode=4abb****************************1266
-[2026.10.31-02.37.34:768][978]LogLaunch: : Activation code verification succeeded. RequestId=78c92a5d-4ba0-5b76-2f70-b6b026694bb3
-[2026.10.31-02.37.34:768][978]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
-[2026.10.31-02.37.34:768][978]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
-[2026.10.31-02.37.34:771][978]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
-[2026.10.31-02.37.34:772][978]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
-[2026.10.31-02.37.34:772][978]LogLaunch: : PerformLoginUseSDK – notify SDK server select, ServerId=1
-[2026.10.31-02.37.34:772][978]LogMemory: USDKBridgeHelper::Server: Line=116, Start
-[2026.10.31-02.37.34:772][978]LogMemory: [Steven.Han]FApiInterface::Server: Line=769, Start
-[2026.10.31-02.37.34:780][978]LogMemory: [Steven.Han]FApiInterface::Server: Line=788, End
-[2026.10.31-02.37.34:780][978]LogMemory: USDKBridgeHelper::Server: Line=119, End
-[2026.10.31-02.37.34:780][978]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
-[2026.10.31-02.37.34:780][978]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
-[2026.10.31-02.37.34:784][978]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
-[2026.10.31-02.37.34:784][978]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
-[2026.10.31-02.37.34:784][978]LogInit: DllProc handle 00007FFEDE290000 E:/Games/Games/WeiMianYeGame/Game/Binaries/Win64/etcd.dll
-[2026.10.31-02.37.34:784][978]LogTemp: DllProc 00007FFEDEAE3550 SetupLog
-[2026.10.31-02.37.34:784][978]LogTemp: DllProc 00007FFEDEAE3590 QuicInit
-[2026.10.31-02.37.34:784][978]LogTemp: DllProc 00007FFEDEAE35D0 QuicSetDatagram
-[2026.10.31-02.37.34:784][978]LogTemp: DllProc 00007FFEDEAE3610 QuicDestroy
-[2026.10.31-02.37.34:784][978]LogTemp: DllProc 00007FFEDEAE3780 QuicTick
-[2026.10.31-02.37.34:784][978]LogTemp: DllProc 00007FFEDEAE3650 QuicDial
-[2026.10.31-02.37.34:785][978]LogTemp: DllProc 00007FFEDEAE36E0 TcpDial
-[2026.10.31-02.37.34:785][978]LogTemp: DllProc 00007FFEDEAE37C0 QuicSend
-[2026.10.31-02.37.34:785][978]LogTemp: DllProc 00007FFEDEAE3840 QuicSendDirect
-[2026.10.31-02.37.34:785][978]LogTemp: DllProc 00007FFEDEAE38B0 QuicSendDirectDatagram
-[2026.10.31-02.37.34:785][978]LogTemp: DllProc 00007FFEDEAE3920 QuicUserdata
-[2026.10.31-02.37.34:785][978]LogTemp: DllProc 00007FFEDEAE3980 QuicClose
-[2026.10.31-02.37.34:785][978]LogTemp: DllProc 00007FFEDEAE39C0 QuicTrySyncDial
-[2026.10.31-02.37.34:785][978]LogTemp: DllProc 00007FFEDEAE2D20 GoDiagMetrics
-[2026.10.31-02.37.34:785][978]LogTemp: DllProc 00007FFEDEAE2D80 GoDiagThreadCreateProfile
-[2026.10.31-02.37.34:785][978]LogTemp: DllProc 00007FFEDEAE2DF0 GoDiagGoroutineProfile
-[2026.10.31-02.37.34:785][978]LogTemp: DllProc 00007FFEDEAE2E60 GoDiagFree
-[2026.10.31-02.37.34:799][979]LogTemp: --------------  UE callback ------------------
-[2026.10.31-02.37.34:799][979]LogTemp: Warning: UE callback Result:
+[2026.10.31-19.45.35:729][773]LogTemp: --------------  UE callback ------------------
+[2026.10.31-19.45.35:731][773]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=13, Start
+[2026.10.31-19.45.35:731][773]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=22, JsonResult={"opcode":"PLACARD","msg":"ok","data":[]}
+[2026.10.31-19.45.35:731][773]LogSDKSubSystem: SDKSubSystem: OnSdkBridgeCallback: {"opcode":"PLACARD","msg":"ok","data":[]}
+[2026.10.31-19.45.35:731][773]LogSDKSubSystem: SDKSubSystem: Placard callback received. Success=1 ItemCount=0
+[2026.10.31-19.45.35:731][773]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=26, End
+[2026.10.31-19.45.40:586][471]LogBackendOperation: LoadBackendOperationConfig loaded successfully
+[2026.10.31-19.45.40:587][472]LogBackendOperation: Error: LoadBackendOperationConfig SystemSwitch ID: 77 not found in ConfigDataManager
+[2026.10.31-19.45.40:587][472]LogNzUpdate: Get SystemSwitch Complete,change:1
+[2026.10.31-19.45.40:591][472]LogNzUpdate: UpdateConfigAndQueryVersion: cache CDN latest version CPPVersion: 1055461, AssetVersion: 0.3.17.18.51,  AssetPatchVersion: -1, CloudDocVersion: 1055461.19246237, UniqueVersion: 51, CompatibleUniqueVersion: 51
+[2026.10.31-19.45.40:591][472]LogLaunch: : Activation code verification started. RequestId=5e5f06b1-4a41-edf5-b649-b29cc8501255 OpenId=1 DeviceCode=4abb****************************1266
+[2026.10.31-19.45.40:601][473]LogLaunch: : Activation code verification succeeded. RequestId=5e5f06b1-4a41-edf5-b649-b29cc8501255
+[2026.10.31-19.45.40:602][473]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
+[2026.10.31-19.45.40:602][473]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
+[2026.10.31-19.45.40:604][473]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
+[2026.10.31-19.45.40:605][473]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
+[2026.10.31-19.45.40:606][473]LogLaunch: : PerformLoginUseSDK – notify SDK server select, ServerId=1
+[2026.10.31-19.45.40:606][473]LogMemory: USDKBridgeHelper::Server: Line=116, Start
+[2026.10.31-19.45.40:606][473]LogMemory: [Steven.Han]FApiInterface::Server: Line=769, Start
+[2026.10.31-19.45.40:612][473]LogMemory: [Steven.Han]FApiInterface::Server: Line=788, End
+[2026.10.31-19.45.40:612][473]LogMemory: USDKBridgeHelper::Server: Line=119, End
+[2026.10.31-19.45.40:612][473]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
+[2026.10.31-19.45.40:612][473]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
+[2026.10.31-19.45.40:615][473]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
+[2026.10.31-19.45.40:616][473]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
+[2026.10.31-19.45.40:616][473]LogInit: DllProc handle 00007FFEDA660000 E:/Games/Games/WeiMianYeGame/Game/Binaries/Win64/etcd.dll
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB3550 SetupLog
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB3590 QuicInit
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB35D0 QuicSetDatagram
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB3610 QuicDestroy
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB3780 QuicTick
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB3650 QuicDial
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB36E0 TcpDial
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB37C0 QuicSend
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB3840 QuicSendDirect
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB38B0 QuicSendDirectDatagram
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB3920 QuicUserdata
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB3980 QuicClose
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB39C0 QuicTrySyncDial
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB2D20 GoDiagMetrics
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB2D80 GoDiagThreadCreateProfile
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB2DF0 GoDiagGoroutineProfile
+[2026.10.31-19.45.40:616][473]LogTemp: DllProc 00007FFEDAEB2E60 GoDiagFree
+[2026.10.31-19.45.40:628][474]LogTemp: --------------  UE callback ------------------
+[2026.10.31-19.45.40:628][474]LogTemp: Warning: UE callback Result:
  {"opcode":"SERVER","msg":"ok","data":{"serverId":1,"serverName":"local","serverIp":"127.0.0.1","serverPort":10012,"extendParam":"{\"gate\": [\"127.0.0.1:25301\", \"127.0.0.1:25302\"], \"gateIp\": \"127.0.0.1\", \"gatePort\": 25301, \"dsIp\": \"127.0.0.1\", \"dsPort\": 7777, \"dedicatedIp\": \"127.0.0.1\", \"dedicatedPort\": 7777, \"travelURL\": \"127.0.0.1:7777\", \"serverType\": \"Dedicated\", \"bUseDirectConnect\": true}"}}
-[2026.10.31-02.37.34:799][979]LogTemp: --------------  UE callback ------------------
-[2026.10.31-02.37.34:800][979]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=13, Start
-[2026.10.31-02.37.34:800][979]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=22, JsonResult={"opcode":"SERVER","msg":"ok","data":{"serverId":1,"serverName":"local","serverIp":"127.0.0.1","serverPort":10012,"extendParam":"{\"gate\": [\"127.0.0.1:25301\", \"127.0.0.1:25302\"], \"gateIp\": \"127.0.0.1\", \"gatePort\": 25301, \"dsIp\": \"127.0.0.1\", \"dsPort\": 7777, \"dedicatedIp\": \"127.0.0.1\", \"dedicatedPort\": 7777, \"travelURL\": \"127.0.0.1:7777\", \"serverType\": \"Dedicated\", \"bUseDirectConnect\": true}"}}
-[2026.10.31-02.37.34:800][979]LogSDKSubSystem: SDKSubSystem: OnSdkBridgeCallback: {"opcode":"SERVER","msg":"ok","data":{"serverId":1,"serverName":"local","serverIp":"127.0.0.1","serverPort":10012,"extendParam":"{\"gate\": [\"127.0.0.1:25301\", \"127.0.0.1:25302\"], \"gateIp\": \"127.0.0.1\", \"gatePort\": 25301, \"dsIp\": \"127.0.0.1\", \"dsPort\": 7777, \"dedicatedIp\": \"127.0.0.1\", \"dedicatedPort\": 7777, \"travelURL\": \"127.0.0.1:7777\", \"serverType\": \"Dedicated\", \"bUseDirectConnect\": true}"}}
-[2026.10.31-02.37.34:800][979]LogSDKSubSystem: SDKSubSystem: Server callback received.
-[2026.10.31-02.37.34:801][979]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=26, End
-[2026.10.31-02.37.34:813][981]LogNzNet: QuicOpen 127.0.0.1:25301:1:0
-[2026.10.31-02.37.34:856][987]LogNzNet: [DEBUG]2026-10-31T02:37:34.797 asyncquiclink.go:646: quicLink remote=127.0.0.1:25301
-[2026.10.31-02.37.35:275][ 47]LogNzNet: QuiclibClose 127.0.0.1:25301:1:0
-[2026.10.31-02.37.35:276][ 47]LogNzNet: [DEBUG]2026-10-31T02:37:35.276 asyncquiclink.go:796: read fail Application error 0x0 (local): ActiveClose 127.0.0.1:25301
-[2026.10.31-02.37.35:276][ 47]LogNzNet: [DEBUG]2026-10-31T02:37:35.276 asyncquiclink.go:651: quic AcceptStream fail remote=127.0.0.1:25301 err=Application error 0x0 (local): ActiveClose
-[2026.10.31-02.37.35:276][ 48]LogNzNet: [DEBUG]2026-10-31T02:37:35.276 asyncquiclink.go:739: quicStream closed remote=127.0.0.1:25301
-[2026.10.31-02.37.35:278][ 48]LogNzNet: Error: Drop QuicClose 127.0.0.1:25301:1:0
-[2026.10.31-02.37.35:278][ 48]LogNzNet: Error: Drop QuicClose 2
-[2026.10.31-02.37.35:281][ 48]LogNzNet: [DEBUG]2026-10-31T02:37:35.281 asyncquiclink.go:646: quicLink remote=127.0.0.1:25302
-[2026.10.31-02.37.35:285][ 49]LogNzNet: QuicOpen 127.0.0.1:25302:3:0
-[2026.10.31-02.37.35:782][120]LogNzNet: QuiclibClose 127.0.0.1:25302:3:0
-[2026.10.31-02.37.35:783][120]LogNzNet: [DEBUG]2026-10-31T02:37:35.782 asyncquiclink.go:796: read fail Application error 0x0 (local): ActiveClose 127.0.0.1:25302
-[2026.10.31-02.37.35:783][120]LogNzNet: [DEBUG]2026-10-31T02:37:35.782 asyncquiclink.go:651: quic AcceptStream fail remote=127.0.0.1:25302 err=Application error 0x0 (local): ActiveClose
-[2026.10.31-02.37.35:783][120]LogNzNet: [DEBUG]2026-10-31T02:37:35.783 asyncquiclink.go:739: quicStream closed remote=127.0.0.1:25302
-[2026.10.31-02.37.35:785][121]LogNzNet: Error: Drop QuicClose 127.0.0.1:25302:3:0
-[2026.10.31-02.37.35:785][121]LogNzNet: Error: Drop QuicClose 4
-[2026.10.31-02.37.35:788][121]LogNzNet: [DEBUG]2026-10-31T02:37:35.788 asyncquiclink.go:646: quicLink remote=127.0.0.1:25301
-[2026.10.31-02.37.35:792][122]LogNzNet: QuicOpen 127.0.0.1:25301:5:0
-[2026.10.31-02.37.35:890][136]LogNzNet: AddGateConnection - RunAs=Client GateConnectionId=1
-[2026.10.31-02.37.35:890][136]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
-[2026.10.31-02.37.35:890][136]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
-[2026.10.31-02.37.35:892][136]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
-[2026.10.31-02.37.35:892][136]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
-[2026.10.31-02.37.35:893][136]LogMemory: USDKBridgeHelper::DeviceId: Line=421, Start
-[2026.10.31-02.37.35:893][136]LogMemory: [Steven.Han]FApiInterface::DeviceId: Line=108, Start
-[2026.10.31-02.37.35:894][136]LogMemory: [Steven.Han]FApiInterface::DeviceId: Line=129, End
-[2026.10.31-02.37.35:894][136]LogMemory: USDKBridgeHelper::DeviceId: Line=423, End
-[2026.10.31-02.37.35:913][137]LogServer: RecvConnectGate () 10:1 1
-[2026.10.31-02.37.35:913][137]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
-[2026.10.31-02.37.35:913][137]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
-[2026.10.31-02.37.35:915][137]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
-[2026.10.31-02.37.35:916][137]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
-[2026.10.31-02.37.35:916][137]LogServer: AccountLogin 127.0.0.1 RoleID=1
-[2026.10.31-02.37.35:916][137]LogNzRobot: Verbose: NZ_AUTOMATION_ROLE_LOGIN success=true role_id=1
-[2026.10.31-02.37.35:916][137]LogServer: RecvRoleLogin RoleID=1 10:1
-[2026.10.31-02.37.35:917][137]LogNzRobot: Verbose: NZ_AUTOMATION_RECV_ROLE_LOGIN role_id=1 node=10 conn_id=1
-[2026.10.31-02.37.35:917][137]LogNzUpdate: Warning: ReceiveClientLatestVersion: parse version map failed 1055461.19246237
-[2026.10.31-02.37.35:917][137]LogNzUpdate: ReceiveClientLatestVersion: no update needed (Target=51 Current=51)
-[2026.10.31-02.37.35:917][137]LogNzRobot: Verbose: NZ_AUTOMATION_LOGIN_RESPONSE success=true error=ERR_NONE node=10 conn_id=1
-[2026.10.31-02.37.35:917][137]LogServer: OnLoginResponse Begin Success=true Error=ERR_NONE Conn=10:1 Session=AttemptId=1 Phase=TravelPending LoginConnNode=10:1 ResultHandled=false
-[2026.10.31-02.37.35:917][137]LogLaunch: : OnLoginResponse. bSuccessfully=True FailureReason=
-[2026.10.31-02.37.35:917][137]LogNzRobot: Verbose: NZ_AUTOMATION_LOGIN_WORLD_RESPONSE success=true reason=
-[2026.10.31-02.37.35:918][137]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
-[2026.10.31-02.37.35:918][137]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
-[2026.10.31-02.37.35:920][137]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
-[2026.10.31-02.37.35:920][137]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
-[2026.10.31-02.37.35:920][137]LogServer: ClientTravel nz.10-1?RoleID=1?MapId=10239
-[2026.10.31-02.37.35:921][137]Puerts: Error: (0x00000000201442B0) js callback exception ..\..\..\Nezha\Content\JavaScript\Nezha\GameInstance\TsGameInstance.min.cbc:1: TypeError: Cannot read properties of undefined (reading 'GetEventManager')
+[2026.10.31-19.45.40:628][474]LogTemp: --------------  UE callback ------------------
+[2026.10.31-19.45.40:629][474]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=13, Start
+[2026.10.31-19.45.40:629][474]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=22, JsonResult={"opcode":"SERVER","msg":"ok","data":{"serverId":1,"serverName":"local","serverIp":"127.0.0.1","serverPort":10012,"extendParam":"{\"gate\": [\"127.0.0.1:25301\", \"127.0.0.1:25302\"], \"gateIp\": \"127.0.0.1\", \"gatePort\": 25301, \"dsIp\": \"127.0.0.1\", \"dsPort\": 7777, \"dedicatedIp\": \"127.0.0.1\", \"dedicatedPort\": 7777, \"travelURL\": \"127.0.0.1:7777\", \"serverType\": \"Dedicated\", \"bUseDirectConnect\": true}"}}
+[2026.10.31-19.45.40:629][474]LogSDKSubSystem: SDKSubSystem: OnSdkBridgeCallback: {"opcode":"SERVER","msg":"ok","data":{"serverId":1,"serverName":"local","serverIp":"127.0.0.1","serverPort":10012,"extendParam":"{\"gate\": [\"127.0.0.1:25301\", \"127.0.0.1:25302\"], \"gateIp\": \"127.0.0.1\", \"gatePort\": 25301, \"dsIp\": \"127.0.0.1\", \"dsPort\": 7777, \"dedicatedIp\": \"127.0.0.1\", \"dedicatedPort\": 7777, \"travelURL\": \"127.0.0.1:7777\", \"serverType\": \"Dedicated\", \"bUseDirectConnect\": true}"}}
+[2026.10.31-19.45.40:629][474]LogSDKSubSystem: SDKSubSystem: Server callback received.
+[2026.10.31-19.45.40:629][474]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=26, End
+[2026.10.31-19.45.40:633][475]LogNzNet: QuicOpen 127.0.0.1:25302:1:0
+[2026.10.31-19.45.40:670][479]LogNzNet: [DEBUG]2026-10-31T19:45:40.628 asyncquiclink.go:646: quicLink remote=127.0.0.1:25302
+[2026.10.31-19.45.41:106][541]LogNzNet: QuiclibClose 127.0.0.1:25302:1:0
+[2026.10.31-19.45.41:107][541]LogNzNet: [DEBUG]2026-10-31T19:45:41.106 asyncquiclink.go:796: read fail Application error 0x0 (local): ActiveClose 127.0.0.1:25302
+[2026.10.31-19.45.41:107][542]LogNzNet: [DEBUG]2026-10-31T19:45:41.107 asyncquiclink.go:651: quic AcceptStream fail remote=127.0.0.1:25302 err=Application error 0x0 (local): ActiveClose
+[2026.10.31-19.45.41:107][542]LogNzNet: [DEBUG]2026-10-31T19:45:41.107 asyncquiclink.go:739: quicStream closed remote=127.0.0.1:25302
+[2026.10.31-19.45.41:114][543]LogNzNet: [DEBUG]2026-10-31T19:45:41.114 asyncquiclink.go:646: quicLink remote=127.0.0.1:25301
+[2026.10.31-19.45.41:115][543]LogNzNet: Error: Drop QuicClose 127.0.0.1:25302:1:0
+[2026.10.31-19.45.41:115][543]LogNzNet: Error: Drop QuicClose 2
+[2026.10.31-19.45.41:116][543]LogNzNet: QuicOpen 127.0.0.1:25301:3:0
+[2026.10.31-19.45.41:612][614]LogNzNet: QuiclibClose 127.0.0.1:25301:3:0
+[2026.10.31-19.45.41:613][614]LogNzNet: [DEBUG]2026-10-31T19:45:41.613 asyncquiclink.go:796: read fail Application error 0x0 (local): ActiveClose 127.0.0.1:25301
+[2026.10.31-19.45.41:613][615]LogNzNet: [DEBUG]2026-10-31T19:45:41.613 asyncquiclink.go:651: quic AcceptStream fail remote=127.0.0.1:25301 err=Application error 0x0 (local): ActiveClose
+[2026.10.31-19.45.41:613][615]LogNzNet: [DEBUG]2026-10-31T19:45:41.613 asyncquiclink.go:739: quicStream closed remote=127.0.0.1:25301
+[2026.10.31-19.45.41:615][615]LogNzNet: Error: Drop QuicClose 127.0.0.1:25301:3:0
+[2026.10.31-19.45.41:615][615]LogNzNet: Error: Drop QuicClose 4
+[2026.10.31-19.45.41:618][615]LogNzNet: [DEBUG]2026-10-31T19:45:41.618 asyncquiclink.go:646: quicLink remote=127.0.0.1:25302
+[2026.10.31-19.45.41:622][616]LogNzNet: QuicOpen 127.0.0.1:25302:5:0
+[2026.10.31-19.45.41:719][630]LogNzNet: AddGateConnection - RunAs=Client GateConnectionId=1
+[2026.10.31-19.45.41:719][630]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
+[2026.10.31-19.45.41:720][630]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
+[2026.10.31-19.45.41:721][630]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
+[2026.10.31-19.45.41:722][630]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
+[2026.10.31-19.45.41:722][630]LogMemory: USDKBridgeHelper::DeviceId: Line=421, Start
+[2026.10.31-19.45.41:723][630]LogMemory: [Steven.Han]FApiInterface::DeviceId: Line=108, Start
+[2026.10.31-19.45.41:723][630]LogMemory: [Steven.Han]FApiInterface::DeviceId: Line=129, End
+[2026.10.31-19.45.41:723][630]LogMemory: USDKBridgeHelper::DeviceId: Line=423, End
+[2026.10.31-19.45.41:744][631]LogServer: RecvConnectGate () 10:1 1
+[2026.10.31-19.45.41:750][632]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
+[2026.10.31-19.45.41:750][632]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
+[2026.10.31-19.45.41:753][632]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
+[2026.10.31-19.45.41:753][632]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
+[2026.10.31-19.45.41:753][632]LogServer: AccountLogin 127.0.0.1 RoleID=1
+[2026.10.31-19.45.41:753][632]LogNzRobot: Verbose: NZ_AUTOMATION_ROLE_LOGIN success=true role_id=1
+[2026.10.31-19.45.41:754][632]LogServer: RecvRoleLogin RoleID=1 10:1
+[2026.10.31-19.45.41:755][632]LogNzRobot: Verbose: NZ_AUTOMATION_RECV_ROLE_LOGIN role_id=1 node=10 conn_id=1
+[2026.10.31-19.45.41:755][632]LogNzUpdate: Warning: ReceiveClientLatestVersion: parse version map failed 1055461.19246237
+[2026.10.31-19.45.41:755][632]LogNzUpdate: ReceiveClientLatestVersion: no update needed (Target=51 Current=51)
+[2026.10.31-19.45.41:755][632]LogNzRobot: Verbose: NZ_AUTOMATION_LOGIN_RESPONSE success=true error=ERR_NONE node=10 conn_id=1
+[2026.10.31-19.45.41:755][632]LogServer: OnLoginResponse Begin Success=true Error=ERR_NONE Conn=10:1 Session=AttemptId=1 Phase=TravelPending LoginConnNode=10:1 ResultHandled=false
+[2026.10.31-19.45.41:755][632]LogLaunch: : OnLoginResponse. bSuccessfully=True FailureReason=
+[2026.10.31-19.45.41:755][632]LogNzRobot: Verbose: NZ_AUTOMATION_LOGIN_WORLD_RESPONSE success=true reason=
+[2026.10.31-19.45.41:756][632]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
+[2026.10.31-19.45.41:756][632]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
+[2026.10.31-19.45.41:759][632]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
+[2026.10.31-19.45.41:759][632]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
+[2026.10.31-19.45.41:759][632]LogServer: ClientTravel nz.10-1?RoleID=1?MapId=10239
+[2026.10.31-19.45.41:759][632]Puerts: Error: (0x00000000DBE4AAB0) js callback exception ..\..\..\Nezha\Content\JavaScript\Nezha\GameInstance\TsGameInstance.min.cbc:1: TypeError: Cannot read properties of undefined (reading 'GetEventManager')
 
 TypeError: Cannot read properties of undefined (reading 'GetEventManager')
     at TsGameInstance.GetEventManager (..\..\..\Nezha\Content\JavaScript\Nezha\GameInstance\TsGameInstance.min.cbc:1:34884)
@@ -200,274 +191,275 @@ TypeError: Cannot read properties of undefined (reading 'GetEventManager')
     at Object.RecvLoadRole [as Handler] (..\..\..\Nezha\Content\JavaScript\Nezha\GameInstance\MessageHandler.min.cbc:1:53488)
     at FNetworkManager.OnMessage (..\..\..\Nezha\Content\JavaScript\Nezha\GameInstance\Manager\NetworkManager.min.cbc:1:14240)
     at FNetConnection.OnMessage (..\..\..\Nezha\Content\JavaScript\Nezha\GameInstance\Manager\NetworkManager.min.cbc:1:7316)
-    at Pak: ..\..\..\Nezha\Content\Paks\pakchunk0-WindowsClient.pak\Nezha\Content\Java[2026.10.31-02.37.35:921][137]LogLoadingScreen: ShouldShowLoadingScreen We have pending travel (the TravelURL is not empty) 1
-[2026.10.31-02.37.35:921][137]LogLoadingScreen: Showing loading screen when 'IsShowingInitialLoadingScreen()' is false.
-[2026.10.31-02.37.35:921][137]LogLoadingScreen: We have pending travel (the TravelURL is not empty)
-[2026.10.31-02.37.35:922][137]LogLoadingScreen:  StartBlockingInput
-[2026.10.31-02.37.35:922][137]LogStreaming: Display: FlushAsyncLoading(1510): 1 QueuedPackages, 0 AsyncPackages
-[2026.10.31-02.37.36:012][137]LogRHI: ShaderPipelineCache: Batch mode changed (1): Size: 199 -> 200, Time: 16.000000 -> 16.000000
-[2026.10.31-02.37.36:013][137]LogCore: Display: Setting hang detector multiplier to 1.0000s. New hang duration: 0.0000s. New present duration: 0.0000s.
-[2026.10.31-02.37.36:014][137]LogLoadingScreen: Loading screen showing: 1. Reason: We have pending travel (the TravelURL is not empty)
-[2026.10.31-02.37.36:019][138]LogGlobalStatus: UEngine::Browse Started Browse: "nz.10-1/Game/Nezha/Map/Core/LaunchMap/LaunchMap?RoleID=1?MapId=10239"
-[2026.10.31-02.37.36:020][138]LogNet: Browse: nz.10-1/Game/Nezha/Map/Core/LaunchMap/LaunchMap?RoleID=1?MapId=10239
-[2026.10.31-02.37.36:020][138]LogNzNet: SwitchDefaultSocketSubsystem: Target=Nz NewAPI=NzSockets OldAPI=WinSock
-[2026.10.31-02.37.36:020][138]LogNet: InitBase PendingNetDriver (NetDriverDefinition GameNetDriver) using replication model Generic
-[2026.10.31-02.37.36:020][138]LogNet: NzNetConnection_2147475915 setting maximum channels to: 32767
-[2026.10.31-02.37.36:020][138]PacketHandlerLog: Loaded PacketHandler component: Engine.EngineHandlerComponentFactory (StatelessConnectHandlerComponent)
-[2026.10.31-02.37.36:021][138]LogHandshake: Stateless Handshake: NetDriverDefinition 'GameNetDriver' CachedClientID: 1
-[2026.10.31-02.37.36:022][138]LogNet: Game client on port 7777, rate 200000
-[2026.10.31-02.37.36:022][138]LogNetVersion: Nezha 1.0.0.0, NetCL: 51, EngineNetworkVersion: 37, GameNetworkVersion: 0 (Checksum: 4030192857)
-[2026.10.31-02.37.36:246][148]LogReportSubsystem: Error: Report Message Error uuid:6e03c7d24270e3610687b6653761a105
-[2026.10.31-02.37.36:596][197]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.37:013][257]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.37:430][317]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.37:846][377]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.38:263][437]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.38:680][497]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.39:096][557]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.39:513][617]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.39:930][677]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.40:346][737]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.40:763][797]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.40:902][817]LogLoadingScreen: Loading screen showing: 1. Reason: We are connecting to another server (PendingNetGame != nullptr)
-[2026.10.31-02.37.41:180][857]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.41:596][917]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.42:013][977]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.42:429][ 37]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.42:846][ 97]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.43:263][157]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.43:682][217]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.44:099][277]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.44:515][337]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.44:934][397]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.45:350][457]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.45:767][517]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.45:906][537]LogLoadingScreen: Loading screen showing: 1. Reason: We are connecting to another server (PendingNetGame != nullptr)
-[2026.10.31-02.37.46:184][577]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.46:600][637]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.47:017][697]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.47:434][757]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.47:850][817]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.48:267][877]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.48:684][937]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.49:100][997]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.49:517][ 57]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.49:933][117]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.50:176][152]LogElectraPlayer: [00000000BA0820E0][000000002B973AD0] Playback paused at play position 19.435
-[2026.10.31-02.37.50:176][152]LogElectraPlayer: [00000000BA0820E0][000000002B973AD0] Playback reached end at play position 19.435
-[2026.10.31-02.37.50:177][152]LogElectraPlayer: [00000000BA0820E0][000000002B973AD0] IMediaPlayer::Close()
-[2026.10.31-02.37.50:177][152]LogElectraPlayer: [00000000BA0820E0][000000002B973AD0] Playback stopped. Last play position 19.435
-[2026.10.31-02.37.50:177][152]LogElectraPlayerPlugin: [000000023C7E3A10] IMediaPlayer::Open: Options@000000003BBB0C18
-[2026.10.31-02.37.50:178][152]LogElectraPlayer: [00000000BA0820E0][0000000133571B90] IMediaPlayer::Open(file://...)
-[2026.10.31-02.37.50:350][177]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.50:426][188]LogElectraPlayer: [00000000BA0820E0][0000000133571B90] MP4 playlist reader: The mp4 at "file://..." is not fast-startable. Consider moving the 'moov' box in front of the 'mdat' for faster startup times.
-[2026.10.31-02.37.50:426][188]LogElectraPlayerPlugin: [000000023C7E3A10] IMediaControls::SetRate(1.000000)
-[2026.10.31-02.37.50:433][189]LogElectraPlayer: [00000000BA0820E0][0000000133571B90] Player switched video quality to 9687806 bps from 0 bps. 0 upswitches, 0 downswitches (0 drastic ones)
-[2026.10.31-02.37.50:551][206]LogElectraPlayer: [00000000BA0820E0][0000000133571B90] Playback started at play position 0.000
-[2026.10.31-02.37.50:551][206]LogElectraPlayer: [00000000BA0820E0][0000000133571B90] Playback resumed at play position 0.000
-[2026.10.31-02.37.50:767][237]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.50:912][258]LogLoadingScreen: Loading screen showing: 1. Reason: We are connecting to another server (PendingNetGame != nullptr)
-[2026.10.31-02.37.51:183][297]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.51:600][357]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.52:017][417]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.52:433][477]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.52:850][537]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.53:267][597]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.53:683][657]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.54:100][717]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.54:516][777]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.54:934][837]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.55:350][897]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.55:767][957]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.55:919][979]LogLoadingScreen: Loading screen showing: 1. Reason: We are connecting to another server (PendingNetGame != nullptr)
-[2026.10.31-02.37.56:183][ 17]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.56:516][ 65]LogElectraPlayer: [00000000BA0820E0][0000000133571B90] Looping (1) from 6.038 to 0.000
-[2026.10.31-02.37.56:600][ 77]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.57:016][137]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.57:433][197]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.57:850][257]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.58:267][317]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.58:683][377]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.59:100][437]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.59:516][497]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.37.59:933][557]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.00:349][617]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.00:766][677]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.00:926][700]LogLoadingScreen: Loading screen showing: 1. Reason: We are connecting to another server (PendingNetGame != nullptr)
-[2026.10.31-02.38.01:183][737]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.01:599][797]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.02:016][857]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.02:433][917]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.02:558][935]LogElectraPlayer: [00000000BA0820E0][0000000133571B90] Looping (2) from 6.038 to 0.000
-[2026.10.31-02.38.02:849][977]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.03:266][ 37]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.03:683][ 97]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.04:099][157]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.04:516][217]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.04:932][277]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.05:349][337]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.05:766][397]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.05:932][421]LogLoadingScreen: Loading screen showing: 1. Reason: We are connecting to another server (PendingNetGame != nullptr)
-[2026.10.31-02.38.06:182][457]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
-[2026.10.31-02.38.06:189][458]LogNet: Warning: UNetConnection::Tick: Connection TIMED OUT. Closing connection.. Elapsed: 30.17, Real: 30.01, Good: 30.01, DriverTime: 30.17, Threshold: 30.00, [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: NzNetConnection_2147475915, Driver: Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475919, IsServer: NO, PC: NULL, Owner: NULL, UniqueId: INVALID
-[2026.10.31-02.38.06:189][458]LogNet: Error: UEngine::BroadcastNetworkFailure: FailureType = ConnectionTimeout, ErrorString = UNetConnection::Tick: Connection TIMED OUT. Closing connection.. Elapsed: 30.17, Real: 30.01, Good: 30.01, DriverTime: 30.17, Threshold: 30.00, [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: NzNetConnection_2147475915, Driver: Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475919, IsServer: NO, PC: NULL, Owner: NULL, UniqueId: INVALID, Driver = Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475919
-[2026.10.31-02.38.06:189][458]LogNet: Warning: Network Failure: PendingNetDriver[ConnectionTimeout]: UNetConnection::Tick: Connection TIMED OUT. Closing connection.. Elapsed: 30.17, Real: 30.01, Good: 30.01, DriverTime: 30.17, Threshold: 30.00, [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: NzNetConnection_2147475915, Driver: Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475919, IsServer: NO, PC: NULL, Owner: NULL, UniqueId: INVALID
-[2026.10.31-02.38.06:189][458]LogNet: NetworkFailure: ConnectionTimeout, Error: 'UNetConnection::Tick: Connection TIMED OUT. Closing connection.. Elapsed: 30.17, Real: 30.01, Good: 30.01, DriverTime: 30.17, Threshold: 30.00, [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: NzNetConnection_2147475915, Driver: Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475919, IsServer: NO, PC: NULL, Owner: NULL, UniqueId: INVALID'
-[2026.10.31-02.38.06:189][458]LogNet: UNetConnection::Close: [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: NzNetConnection_2147475915, Driver: Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475919, IsServer: NO, PC: NULL, Owner: NULL, UniqueId: INVALID, Channels: 3, Time: 2026.10.30-23.38.06
-[2026.10.31-02.38.06:189][458]LogNet: UNetConnection::SendCloseReason:
-[2026.10.31-02.38.06:190][458]LogNet:  - Result=ConnectionTimeout, ErrorContext="ConnectionTimeout"
-[2026.10.31-02.38.06:190][458]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: [UChannel] ChIndex: 0, Closing: 0 [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: NzNetConnection_2147475915, Driver: Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475919, IsServer: NO, PC: NULL, Owner: NULL, UniqueId: INVALID
-[2026.10.31-02.38.06:190][458]LogNzNet: UNzNetConnection::OnClose - RemoteAddr=FInternetAddrNz 10:1-1 GateConnectionKey=10:1 serial=1 PC= Owner= State=Closed ClosePosted=1 Reason=OnClose
-[2026.10.31-02.38.06:196][459]LogGlobalStatus: UEngine::Browse Started Browse: "/Game/Nezha/Map/Core/LaunchMap/LaunchMap?closed"
-[2026.10.31-02.38.06:196][459]LogNet: Browse: /Game/Nezha/Map/Core/LaunchMap/LaunchMap?closed
-[2026.10.31-02.38.06:196][459]LogNet: DestroyNamedNetDriver NzNetDriver_2147475919 [PendingNetDriver]
-[2026.10.31-02.38.06:196][459]LogExit: Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475919 shut down
-[2026.10.31-02.38.06:196][459]LogNet: Connection failed; returning to Entry
-[2026.10.31-02.38.06:196][459]LogLoad: LoadMap: /Game/Nezha/Map/Core/LaunchMap/LaunchMap?closed
-[2026.10.31-02.38.06:196][459]LogWorld: BeginTearingDown for /Game/Nezha/Map/Core/LaunchMap/LaunchMap
-[2026.10.31-02.38.06:198][459]LogWorld: UWorld::CleanupWorld for LaunchMap, bSessionEnded=true, bCleanupResources=true
-[2026.10.31-02.38.06:198][459]LogHavokNavTest: SamsaraWorldSubsystem_2147481360 (0000000021F3C790): USamsaraWorldSubsystem::Deinitialize ()
-[2026.10.31-02.38.06:198][459]LogLaunch: : Deinitialize.
-[2026.10.31-02.38.06:198][459]LogLaunch: : UpdateWorldPhase. Phase=End(7)
-[2026.10.31-02.38.06:225][459]LogAudio: Display: Audio Device unregistered from world 'None'.
-[2026.10.31-02.38.06:226][459]LogElectraPlayer: [00000000BA0820E0][0000000133571B90] IMediaPlayer::Close()
-[2026.10.31-02.38.06:226][459]LogElectraPlayer: [00000000BA0820E0][0000000133571B90] Playback stopped. Last play position 3.602
-[2026.10.31-02.38.06:230][459]LogNet: UChannel::CleanUp: ChIndex == 0. Closing connection. [UChannel] ChIndex: 0, Closing: 0 [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: None, Driver: Name:PendingNetDriver Def:GameNetDriver None, IsServer: NO, PC: NULL, Owner: NULL, UniqueId: INVALID
-[2026.10.31-02.38.06:238][459]LogNet: UNetConnection::PendingConnectionLost. [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: None, Driver: Name:PendingNetDriver Def:GameNetDriver None, IsServer: YES, PC: NULL, Owner: NULL, UniqueId: INVALID bPendingDestroy=0
-[2026.10.31-02.38.06:238][459]LogNet: Verbose: UNetConnection::SetClientLoginState: State changing from Invalid to CleanedUp
-[2026.10.31-02.38.06:238][459]LogNet: Verbose: UNetConnection::SetClientLoginState: State same: CleanedUp
-[2026.10.31-02.38.06:242][459]LogUObjectHash: Compacting FUObjectHashTables data took   1.23ms
-[2026.10.31-02.38.06:245][459]LogNzClientAuthoritativeMode: UClientAuthoritativeModeSubsystem SetPlayingClientAuthoritativeMode: Status unchanged. PlayingClientAuthoritativeMode=1 GameInstance:BP_NzGameInstance_C_2147482535
-[2026.10.31-02.38.06:245][459]LogStreaming: Display: FlushAsyncLoading(1516): 1 QueuedPackages, 0 AsyncPackages
-[2026.10.31-02.38.06:245][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_LaunchPlayerController_C /Game/Nezha/Map/Core/LaunchMap/BP_LaunchPlayerController.Default__BP_LaunchPlayerController_C Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:245][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_LaunchGameMode_C /Game/Nezha/Map/Core/LaunchMap/BP_LaunchGameMode.Default__BP_LaunchGameMode_C Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:246][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_LaunchGameMode_C /Game/Nezha/Map/Core/LaunchMap/BP_LaunchGameMode.Default__BP_LaunchGameMode_C Frequency=10.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:246][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): LaunchMap_C /Game/Nezha/Map/Core/LaunchMap/LaunchMap.Default__LaunchMap_C Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:246][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): LaunchMap_C /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.LaunchMap_C_1 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:246][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): NzWorldSettings /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.NzWoldSettings Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:246][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): NzWorldSettings /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.NzWoldSettings Frequency=10.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:246][459]LogAudio: Display: Audio Device (ID: 1) registered with world 'LaunchMap'.
-[2026.10.31-02.38.06:246][459]LogHavokNavTest: SamsaraWorldSubsystem_2147475867 (0000000283093910): USamsaraWorldSubsystem::Initialize ()
-[2026.10.31-02.38.06:247][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BuoyancyManager /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.BuoyancyManager_2147475856 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:247][459]LogNzCommon: InitTickFunction: NzTick_TG_PrePhysics, Priority=0
-[2026.10.31-02.38.06:247][459]LogNzCommon: InitTickFunction: NzTick_TG_StartPhysics, Priority=0
-[2026.10.31-02.38.06:247][459]LogNzCommon: InitTickFunction: NzTick_TG_DuringPhysics, Priority=0
-[2026.10.31-02.38.06:247][459]LogNzCommon: InitTickFunction: NzTick_TG_EndPhysics, Priority=0
-[2026.10.31-02.38.06:247][459]LogNzCommon: InitTickFunction: NzTick_TG_PostPhysics, Priority=100
-[2026.10.31-02.38.06:247][459]LogNzCommon: InitTickFunction: NzTick_TG_LastDemotable, Priority=0
-[2026.10.31-02.38.06:247][459]LogNzCommon: InitTickFunction: NzTick_PreMovement, Priority=700
-[2026.10.31-02.38.06:247][459]LogNzCommon: InitTickFunction: NzTick_PostMovement, Priority=400
-[2026.10.31-02.38.06:247][459]LogLandscapeLayer: Skipping landscape layer subsystem creation for map: /Game/Nezha/Map/Core/LaunchMap/LaunchMap
-[2026.10.31-02.38.06:251][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): DefaultPhysicsVolume /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.DefaultPhysicsVolume_2147475817 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:251][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): DefaultPhysicsVolume /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.DefaultPhysicsVolume_2147475817 Frequency=0.100000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:253][459]LogLaunch: : Initialize. bHasLaunched=False
-[2026.10.31-02.38.06:254][459]LogLoad: Game class is 'BP_LaunchGameMode_C'
-[2026.10.31-02.38.06:254][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_LaunchGameMode_C /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.BP_LaunchGameMode_C_2147475804 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:254][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_LaunchGameMode_C /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.BP_LaunchGameMode_C_2147475804 Frequency=10.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:254][459]LogWorld: Bringing World /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap up for play (max tick rate 0) at 2026.10.31-02.38.06
-[2026.10.31-02.38.06:254][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): GameSession /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.GameSession_2147475798 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:254][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): GameSession /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.GameSession_2147475798 Frequency=10.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:254][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): ParticleEventManager /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.ParticleEventManager_2147475797 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:254][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): GameStateBase /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.GameStateBase_2147475795 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:254][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): GameStateBase /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.GameStateBase_2147475795 Frequency=10.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): GameNetworkManager /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.GameNetworkManager_2147475794 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): GameNetworkManager /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.GameNetworkManager_2147475794 Frequency=10.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogWorld: Bringing up level for play took: 0.000305
-[2026.10.31-02.38.06:255][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): AbstractNavData /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.AbstractNavData_2147475793 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_LaunchPlayerController_C /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.BP_LaunchPlayerController_C_2147475791 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): PlayerState /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.PlayerState_2147475790 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): PlayerState /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.PlayerState_2147475790 Frequency=10.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): PlayerState /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.PlayerState_2147475790 Frequency=1.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): PlayerCameraManager /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.PlayerCameraManager_2147475789 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
-[2026.10.31-02.38.06:255][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): SpectatorPawn /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.SpectatorPawn_2147475784 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): SpectatorPawn /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.SpectatorPawn_2147475784 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): HUD /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.HUD_2147475783 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogGameMode: Verbose: RestartPlayerAtPlayerStart 0
-[2026.10.31-02.38.06:255][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): DefaultPawn /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.DefaultPawn_2147475781 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): DefaultPawn /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.DefaultPawn_2147475781 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): NzDebugDrawActor /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.NzDebugDrawActor_2147475780 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:255][459]LogNzRobot: Verbose: NZ_AUTOMATION_BUILD_CL cl=1055461 version=5.5.4-1055461+++NZProject+UnrealProject+cb1 asset_version=0.3.17.18.51
-[2026.10.31-02.38.06:329][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): NiagaraUIActor /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.NiagaraUIActor_2147475642 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:329][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): NiagaraUIActor /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.NiagaraUIActor_2147475640 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:353][459]LogMovieSceneECS: Warning: Unable to resolve property 'Clipping != EWidgetClipping::Inherit' from 'SizeBox' instance 'SizeText'
-[2026.10.31-02.38.06:354][459]LogMovieScene: Warning: Unable to resolve property 'Clipping != EWidgetClipping::Inherit' from 'SizeBox' instance 'SizeText'
-[2026.10.31-02.38.06:354][459]LogLaunch: : StartUpdate.
-[2026.10.31-02.38.06:354][459]LogLaunch: : UpdateWorldPhase. Phase=PreUpdate(1)
-[2026.10.31-02.38.06:354][459]LogNet: Verbose: AActor::SetNetUpdateFrequency(): LevelSequenceActor /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.LevelSequenceActor_2147475617 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.06:354][459]LogElectraPlayerPlugin: [00000000354A4490] IMediaPlayer::Open: Options@000000003BA17D88
-[2026.10.31-02.38.06:356][459]LogElectraPlayer: [00000000309ABE60][000000023EEC8650] IMediaPlayer::Open(file://...)
-[2026.10.31-02.38.06:357][459]LogLaunch: : OnUpdateCompleted.
-[2026.10.31-02.38.06:357][459]LogLaunch: : UpdateWorldPhase. Phase=PostUpdate(3)
-[2026.10.31-02.38.06:357][459]LogLaunch: : UpdateWorldPhase. Phase=PreProcessStepFinished(4)
-[2026.10.31-02.38.06:358][459]LogGameSetting: SetNZFrameRateLimit To 0, Reason 1
-[2026.10.31-02.38.06:358][459]LogDLSSBlueprint: Warning: RR is not supported because no need to reconstruct rays if there are no rays to reconstruct ¯'_(ツ)_/¯
-[2026.10.31-02.38.06:358][459]LogDLSSBlueprint: Warning: RR is not supported because no need to reconstruct rays if there are no rays to reconstruct ¯'_(ツ)_/¯
-[2026.10.31-02.38.06:359][459]LogGameSetting: SetNZDLSSModelPreset To 5, Reason 1
-[2026.10.31-02.38.06:359][459]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
-[2026.10.31-02.38.06:359][459]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
-[2026.10.31-02.38.06:364][459]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
-[2026.10.31-02.38.06:366][459]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
-[2026.10.31-02.38.06:366][459]LogLaunch: : BeginPlay. bHasLaunched=True
-[2026.10.31-02.38.06:366][459]LogLoad: Took 0.168342 seconds to LoadMap(/Game/Nezha/Map/Core/LaunchMap/LaunchMap)
-[2026.10.31-02.38.06:366][459]LogGlobalStatus: UEngine::LoadMap Load map complete /Game/Nezha/Map/Core/LaunchMap/LaunchMap
-[2026.10.31-02.38.06:368][459]LogUObjectHash: Compacting FUObjectHashTables data took   1.12ms
-[2026.10.31-02.38.06:374][459]LogUObjectHash: Compacting FUObjectHashTables data took   0.28ms
-[2026.10.31-02.38.06:566][486]LogElectraPlayer: [00000000309ABE60][000000023EEC8650] MP4 playlist reader: The mp4 at "file://..." is not fast-startable. Consider moving the 'moov' box in front of the 'mdat' for faster startup times.
-[2026.10.31-02.38.06:566][486]LogElectraPlayerPlugin: [00000000354A4490] IMediaControls::SetRate(1.000000)
-[2026.10.31-02.38.06:573][487]LogElectraPlayer: [00000000309ABE60][000000023EEC8650] Player switched video quality to 15686742 bps from 0 bps. 0 upswitches, 0 downswitches (0 drastic ones)
-[2026.10.31-02.38.06:725][509]LogElectraPlayer: [00000000309ABE60][000000023EEC8650] Playback started at play position 0.000
-[2026.10.31-02.38.06:726][509]LogElectraPlayer: [00000000309ABE60][000000023EEC8650] Playback resumed at play position 0.000
-[2026.10.31-02.38.06:782][517]LogLoadingScreen: ShouldShowLoadingScreen (nothing wants to show it anymore) 0
-[2026.10.31-02.38.07:198][577]LogLoadingScreen: ShouldShowLoadingScreen (nothing wants to show it anymore) 0
-[2026.10.31-02.38.07:640][637]LogLoadingScreen: ShouldShowLoadingScreen (nothing wants to show it anymore) 0
-[2026.10.31-02.38.08:171][697]LogLoadingScreen: ShouldShowLoadingScreen (nothing wants to show it anymore) 0
-[2026.10.31-02.38.08:377][718]LogLoadingScreen: Hiding loading screen when 'IsShowingInitialLoadingScreen()' is false.
-[2026.10.31-02.38.08:377][718]LogLoadingScreen: (nothing wants to show it anymore)
-[2026.10.31-02.38.08:378][718]LogLoadingScreen: Garbage Collecting before dropping load screen
-[2026.10.31-02.38.08:383][718]LogUObjectHash: Compacting FUObjectHashTables data took   1.06ms
-[2026.10.31-02.38.10:018][882]LogElectraPlayer: [00000000309ABE60][000000023EEC8650] Playback paused at play position 3.371
-[2026.10.31-02.38.10:018][882]LogElectraPlayer: [00000000309ABE60][000000023EEC8650] Playback reached end at play position 3.371
-[2026.10.31-02.38.10:019][882]LogAkAudio: Warning: UAkGameplayStatics::ExecuteStopActionOnPlayingID: Invalid Playing ID!
-[2026.10.31-02.38.10:019][882]LogElectraPlayer: [00000000309ABE60][000000023EEC8650] IMediaPlayer::Close()
-[2026.10.31-02.38.10:019][882]LogElectraPlayer: [00000000309ABE60][000000023EEC8650] Playback stopped. Last play position 3.371
-[2026.10.31-02.38.10:020][882]LogElectraPlayerPlugin: [00000000354A4490] IMediaPlayer::Open: Options@000000003BA19F38
-[2026.10.31-02.38.10:020][882]LogElectraPlayer: [00000000309ABE60][00000000DDCF4C10] IMediaPlayer::Open(file://...)
-[2026.10.31-02.38.10:020][882]LogNet: Verbose: AActor::SetNetUpdateFrequency(): LevelSequenceActor /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.LevelSequenceActor_2147475604 Frequency=100.000000 HasActorBegunPlay()=0
-[2026.10.31-02.38.10:025][882]LogLoadingScreen: LoadingScreenWidget: K2_FinishLoadingScreen
-[2026.10.31-02.38.10:025][882]LogLoadingScreen:  StopBlockingInput
-[2026.10.31-02.38.10:025][883]LogRHI: ShaderPipelineCache: Batch mode changed (0): Size: 200 -> 1, Time: 16.000000 -> 0.000000
-[2026.10.31-02.38.10:025][883]LogCore: Display: Setting hang detector multiplier to 1.0000s. New hang duration: 0.0000s. New present duration: 0.0000s.
-[2026.10.31-02.38.10:026][883]LogLoadingScreen: LoadingScreen was visible for 34.10s
-[2026.10.31-02.38.10:283][920]LogElectraPlayer: [00000000309ABE60][00000000DDCF4C10] MP4 playlist reader: The mp4 at "file://..." is not fast-startable. Consider moving the 'moov' box in front of the 'mdat' for faster startup times.
-[2026.10.31-02.38.10:283][920]LogElectraPlayerPlugin: [00000000354A4490] IMediaControls::SetRate(1.000000)
-[2026.10.31-02.38.10:290][921]LogElectraPlayer: [00000000309ABE60][00000000DDCF4C10] Player switched video quality to 14859717 bps from 0 bps. 0 upswitches, 0 downswitches (0 drastic ones)
-[2026.10.31-02.38.10:470][947]LogElectraPlayer: [00000000309ABE60][00000000DDCF4C10] Playback started at play position 0.000
-[2026.10.31-02.38.10:470][947]LogElectraPlayer: [00000000309ABE60][00000000DDCF4C10] Playback resumed at play position 0.000
-[2026.10.31-02.38.14:685][553]LogElectraPlayer: [00000000309ABE60][00000000DDCF4C10] Playback paused at play position 4.310
-[2026.10.31-02.38.14:685][553]LogElectraPlayer: [00000000309ABE60][00000000DDCF4C10] Playback reached end at play position 4.310
-[2026.10.31-02.38.14:686][553]LogElectraPlayer: [00000000309ABE60][00000000DDCF4C10] IMediaPlayer::Close()
-[2026.10.31-02.38.14:686][553]LogElectraPlayer: [00000000309ABE60][00000000DDCF4C10] Playback stopped. Last play position 4.310
-[2026.10.31-02.38.14:686][553]LogElectraPlayerPlugin: [00000000354A4490] IMediaPlayer::Open: Options@000000002A3D5E98
-[2026.10.31-02.38.14:686][553]LogElectraPlayer: [00000000309ABE60][00000000FABFCD90] IMediaPlayer::Open(file://...)
-[2026.10.31-02.38.14:687][553]LogLaunch: : PerformSDKLogin – already SDK-logged-in, skip
-[2026.10.31-02.38.14:687][553]LogLaunch: : UpdateWorldPhase. Phase=PostLogin(6)
-[2026.10.31-02.38.14:687][553]LogMemory: USDKBridgeHelper::Placard: Line=226, Start
-[2026.10.31-02.38.14:687][553]LogMemory: [Steven.Han]FApiInterface::Placard: Line=353, Start
-[2026.10.31-02.38.14:690][553]LogTemp: UE Placard Called!
-[2026.10.31-02.38.14:690][553]LogMemory: [Steven.Han]FApiInterface::Placard: Line=370, End
-[2026.10.31-02.38.14:690][553]LogMemory: USDKBridgeHelper::Placard: Line=228, End
-[2026.10.31-02.38.14:717][554]LogTemp: --------------  UE callback ------------------
-[2026.10.31-02.38.14:718][554]LogTemp: Warning: UE callback Result:
+    at Pak: ..\..\..\Nezha\Content\Paks\pakchunk0-WindowsClient.pak\Nezha\Content\Java[2026.10.31-19.45.41:759][632]LogLoadingScreen: ShouldShowLoadingScreen We have pending travel (the TravelURL is not empty) 1
+[2026.10.31-19.45.41:760][632]LogLoadingScreen: Showing loading screen when 'IsShowingInitialLoadingScreen()' is false.
+[2026.10.31-19.45.41:760][632]LogLoadingScreen: We have pending travel (the TravelURL is not empty)
+[2026.10.31-19.45.41:760][632]LogLoadingScreen:  StartBlockingInput
+[2026.10.31-19.45.41:760][632]LogStreaming: Display: FlushAsyncLoading(1510): 1 QueuedPackages, 0 AsyncPackages
+[2026.10.31-19.45.41:821][632]LogRHI: ShaderPipelineCache: Batch mode changed (1): Size: 199 -> 200, Time: 16.000000 -> 16.000000
+[2026.10.31-19.45.41:821][632]LogCore: Display: Setting hang detector multiplier to 1.0000s. New hang duration: 0.0000s. New present duration: 0.0000s.
+[2026.10.31-19.45.41:824][632]LogLoadingScreen: Loading screen showing: 1. Reason: We have pending travel (the TravelURL is not empty)
+[2026.10.31-19.45.41:829][633]LogGlobalStatus: UEngine::Browse Started Browse: "nz.10-1/Game/Nezha/Map/Core/LaunchMap/LaunchMap?RoleID=1?MapId=10239"
+[2026.10.31-19.45.41:829][633]LogNet: Browse: nz.10-1/Game/Nezha/Map/Core/LaunchMap/LaunchMap?RoleID=1?MapId=10239
+[2026.10.31-19.45.41:829][633]LogNzNet: SwitchDefaultSocketSubsystem: Target=Nz NewAPI=NzSockets OldAPI=WinSock
+[2026.10.31-19.45.41:829][633]LogNet: InitBase PendingNetDriver (NetDriverDefinition GameNetDriver) using replication model Generic
+[2026.10.31-19.45.41:829][633]LogNet: NzNetConnection_2147475913 setting maximum channels to: 32767
+[2026.10.31-19.45.41:829][633]PacketHandlerLog: Loaded PacketHandler component: Engine.EngineHandlerComponentFactory (StatelessConnectHandlerComponent)
+[2026.10.31-19.45.41:830][633]LogHandshake: Stateless Handshake: NetDriverDefinition 'GameNetDriver' CachedClientID: 1
+[2026.10.31-19.45.41:830][633]LogNet: Game client on port 7777, rate 200000
+[2026.10.31-19.45.41:830][633]LogNetVersion: Nezha 1.0.0.0, NetCL: 51, EngineNetworkVersion: 37, GameNetworkVersion: 0 (Checksum: 4030192857)
+[2026.10.31-19.45.41:928][634]LogReportSubsystem: Error: Report Message Error uuid:6e03c7d24270e3610687b6653761a105
+[2026.10.31-19.45.42:337][692]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.42:753][752]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.43:171][812]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.43:587][872]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.44:004][932]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.44:421][992]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.44:837][ 52]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.45:253][112]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.45:671][172]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.46:087][232]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.46:503][292]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.46:753][328]LogLoadingScreen: Loading screen showing: 1. Reason: We are connecting to another server (PendingNetGame != nullptr)
+[2026.10.31-19.45.46:920][352]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.47:337][412]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.47:753][472]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.48:171][532]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.48:587][592]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.49:004][652]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.49:420][712]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.49:837][772]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.50:253][832]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.50:671][892]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.51:087][952]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.51:503][ 12]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.51:760][ 49]LogLoadingScreen: Loading screen showing: 1. Reason: We are connecting to another server (PendingNetGame != nullptr)
+[2026.10.31-19.45.51:920][ 72]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.52:337][132]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.52:343][133]LogElectraPlayer: [00000000B9BA5560][000000012CC5E910] Playback paused at play position 19.435
+[2026.10.31-19.45.52:343][133]LogElectraPlayer: [00000000B9BA5560][000000012CC5E910] Playback reached end at play position 19.435
+[2026.10.31-19.45.52:343][133]LogElectraPlayer: [00000000B9BA5560][000000012CC5E910] IMediaPlayer::Close()
+[2026.10.31-19.45.52:344][133]LogElectraPlayer: [00000000B9BA5560][000000012CC5E910] Playback stopped. Last play position 19.435
+[2026.10.31-19.45.52:344][133]LogElectraPlayerPlugin: [00000000F33E7610] IMediaPlayer::Open: Options@00000000EB14BCC8
+[2026.10.31-19.45.52:344][133]LogElectraPlayer: [00000000B9BA5560][00000002CD59C890] IMediaPlayer::Open(file://...)
+[2026.10.31-19.45.52:607][171]LogElectraPlayer: [00000000B9BA5560][00000002CD59C890] MP4 playlist reader: The mp4 at "file://..." is not fast-startable. Consider moving the 'moov' box in front of the 'mdat' for faster startup times.
+[2026.10.31-19.45.52:607][171]LogElectraPlayerPlugin: [00000000F33E7610] IMediaControls::SetRate(1.000000)
+[2026.10.31-19.45.52:614][172]LogElectraPlayer: [00000000B9BA5560][00000002CD59C890] Player switched video quality to 9687806 bps from 0 bps. 0 upswitches, 0 downswitches (0 drastic ones)
+[2026.10.31-19.45.52:733][189]LogElectraPlayer: [00000000B9BA5560][00000002CD59C890] Playback started at play position 0.000
+[2026.10.31-19.45.52:733][189]LogElectraPlayer: [00000000B9BA5560][00000002CD59C890] Playback resumed at play position 0.000
+[2026.10.31-19.45.52:753][192]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.53:170][252]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.53:587][312]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.54:003][372]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.54:420][432]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.54:836][492]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.55:253][552]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.55:670][612]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.56:086][672]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.56:503][732]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.56:767][770]LogLoadingScreen: Loading screen showing: 1. Reason: We are connecting to another server (PendingNetGame != nullptr)
+[2026.10.31-19.45.56:920][792]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.57:336][852]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.57:753][912]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.58:170][972]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.58:586][ 32]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.58:697][ 48]LogElectraPlayer: [00000000B9BA5560][00000002CD59C890] Looping (1) from 6.038 to 0.000
+[2026.10.31-19.45.59:003][ 92]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.59:420][152]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.45.59:836][212]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.00:253][272]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.00:670][332]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.01:086][392]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.01:503][452]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.01:773][491]LogLoadingScreen: Loading screen showing: 1. Reason: We are connecting to another server (PendingNetGame != nullptr)
+[2026.10.31-19.46.01:919][512]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.02:336][572]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.02:753][632]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.03:170][692]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.03:586][752]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.04:003][812]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.04:420][872]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.04:739][918]LogElectraPlayer: [00000000B9BA5560][00000002CD59C890] Looping (2) from 6.038 to 0.000
+[2026.10.31-19.46.04:836][932]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.05:253][992]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.05:670][ 52]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.06:086][112]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.06:502][172]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.06:780][212]LogLoadingScreen: Loading screen showing: 1. Reason: We are connecting to another server (PendingNetGame != nullptr)
+[2026.10.31-19.46.06:920][232]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.07:336][292]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.07:752][352]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.08:169][412]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.08:586][472]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.09:002][532]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.09:419][592]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.09:836][652]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.10:252][712]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.10:668][772]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.10:780][788]LogElectraPlayer: [00000000B9BA5560][00000002CD59C890] Looping (3) from 6.038 to 0.000
+[2026.10.31-19.46.11:085][832]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.11:502][892]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.11:780][932]LogLoadingScreen: Loading screen showing: 1. Reason: We are connecting to another server (PendingNetGame != nullptr)
+[2026.10.31-19.46.11:919][952]LogLoadingScreen: ShouldShowLoadingScreen We are connecting to another server (PendingNetGame != nullptr) 1
+[2026.10.31-19.46.11:940][955]LogNet: Warning: UNetConnection::Tick: Connection TIMED OUT. Closing connection.. Elapsed: 30.11, Real: 30.01, Good: 30.01, DriverTime: 30.11, Threshold: 30.00, [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: NzNetConnection_2147475913, Driver: Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475917, IsServer: NO, PC: NULL, Owner: NULL, UniqueId: INVALID
+[2026.10.31-19.46.11:940][955]LogNet: Error: UEngine::BroadcastNetworkFailure: FailureType = ConnectionTimeout, ErrorString = UNetConnection::Tick: Connection TIMED OUT. Closing connection.. Elapsed: 30.11, Real: 30.01, Good: 30.01, DriverTime: 30.11, Threshold: 30.00, [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: NzNetConnection_2147475913, Driver: Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475917, IsServer: NO, PC: NULL, Owner: NULL, UniqueId: INVALID, Driver = Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475917
+[2026.10.31-19.46.11:941][955]LogNet: Warning: Network Failure: PendingNetDriver[ConnectionTimeout]: UNetConnection::Tick: Connection TIMED OUT. Closing connection.. Elapsed: 30.11, Real: 30.01, Good: 30.01, DriverTime: 30.11, Threshold: 30.00, [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: NzNetConnection_2147475913, Driver: Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475917, IsServer: NO, PC: NULL, Owner: NULL, UniqueId: INVALID
+[2026.10.31-19.46.11:941][955]LogNet: NetworkFailure: ConnectionTimeout, Error: 'UNetConnection::Tick: Connection TIMED OUT. Closing connection.. Elapsed: 30.11, Real: 30.01, Good: 30.01, DriverTime: 30.11, Threshold: 30.00, [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: NzNetConnection_2147475913, Driver: Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475917, IsServer: NO, PC: NULL, Owner: NULL, UniqueId: INVALID'
+[2026.10.31-19.46.11:941][955]LogNet: UNetConnection::Close: [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: NzNetConnection_2147475913, Driver: Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475917, IsServer: NO, PC: NULL, Owner: NULL, UniqueId: INVALID, Channels: 3, Time: 2026.10.31-16.46.11
+[2026.10.31-19.46.11:941][955]LogNet: UNetConnection::SendCloseReason:
+[2026.10.31-19.46.11:941][955]LogNet:  - Result=ConnectionTimeout, ErrorContext="ConnectionTimeout"
+[2026.10.31-19.46.11:941][955]LogNet: UChannel::Close: Sending CloseBunch. ChIndex == 0. Name: [UChannel] ChIndex: 0, Closing: 0 [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: NzNetConnection_2147475913, Driver: Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475917, IsServer: NO, PC: NULL, Owner: NULL, UniqueId: INVALID
+[2026.10.31-19.46.11:941][955]LogNzNet: UNzNetConnection::OnClose - RemoteAddr=FInternetAddrNz 10:1-1 GateConnectionKey=10:1 serial=1 PC= Owner= State=Closed ClosePosted=1 Reason=OnClose
+[2026.10.31-19.46.11:946][956]LogGlobalStatus: UEngine::Browse Started Browse: "/Game/Nezha/Map/Core/LaunchMap/LaunchMap?closed"
+[2026.10.31-19.46.11:947][956]LogNet: Browse: /Game/Nezha/Map/Core/LaunchMap/LaunchMap?closed
+[2026.10.31-19.46.11:947][956]LogNet: DestroyNamedNetDriver NzNetDriver_2147475917 [PendingNetDriver]
+[2026.10.31-19.46.11:947][956]LogExit: Name:PendingNetDriver Def:GameNetDriver NzNetDriver_2147475917 shut down
+[2026.10.31-19.46.11:947][956]LogNet: Connection failed; returning to Entry
+[2026.10.31-19.46.11:947][956]LogLoad: LoadMap: /Game/Nezha/Map/Core/LaunchMap/LaunchMap?closed
+[2026.10.31-19.46.11:947][956]LogWorld: BeginTearingDown for /Game/Nezha/Map/Core/LaunchMap/LaunchMap
+[2026.10.31-19.46.11:949][956]LogWorld: UWorld::CleanupWorld for LaunchMap, bSessionEnded=true, bCleanupResources=true
+[2026.10.31-19.46.11:951][956]LogHavokNavTest: SamsaraWorldSubsystem_2147481360 (00000000EB136490): USamsaraWorldSubsystem::Deinitialize ()
+[2026.10.31-19.46.11:951][956]LogLaunch: : Deinitialize.
+[2026.10.31-19.46.11:951][956]LogLaunch: : UpdateWorldPhase. Phase=End(7)
+[2026.10.31-19.46.11:988][956]LogAudio: Display: Audio Device unregistered from world 'None'.
+[2026.10.31-19.46.11:988][956]LogElectraPlayer: [00000000B9BA5560][00000002CD59C890] IMediaPlayer::Close()
+[2026.10.31-19.46.11:989][956]LogElectraPlayer: [00000000B9BA5560][00000002CD59C890] Playback stopped. Last play position 1.152
+[2026.10.31-19.46.11:993][956]LogNet: UChannel::CleanUp: ChIndex == 0. Closing connection. [UChannel] ChIndex: 0, Closing: 0 [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: None, Driver: Name:PendingNetDriver Def:GameNetDriver None, IsServer: NO, PC: NULL, Owner: NULL, UniqueId: INVALID
+[2026.10.31-19.46.12:002][956]LogNet: UNetConnection::PendingConnectionLost. [UNetConnection] RemoteAddr: FInternetAddrNz 10:1-1, Name: None, Driver: Name:PendingNetDriver Def:GameNetDriver None, IsServer: YES, PC: NULL, Owner: NULL, UniqueId: INVALID bPendingDestroy=0
+[2026.10.31-19.46.12:002][956]LogNet: Verbose: UNetConnection::SetClientLoginState: State changing from Invalid to CleanedUp
+[2026.10.31-19.46.12:002][956]LogNet: Verbose: UNetConnection::SetClientLoginState: State same: CleanedUp
+[2026.10.31-19.46.12:006][956]LogUObjectHash: Compacting FUObjectHashTables data took   1.25ms
+[2026.10.31-19.46.12:009][956]LogNzClientAuthoritativeMode: UClientAuthoritativeModeSubsystem SetPlayingClientAuthoritativeMode: Status unchanged. PlayingClientAuthoritativeMode=1 GameInstance:BP_NzGameInstance_C_2147482535
+[2026.10.31-19.46.12:009][956]LogStreaming: Display: FlushAsyncLoading(1514): 1 QueuedPackages, 0 AsyncPackages
+[2026.10.31-19.46.12:010][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_LaunchPlayerController_C /Game/Nezha/Map/Core/LaunchMap/BP_LaunchPlayerController.Default__BP_LaunchPlayerController_C Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:010][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_LaunchGameMode_C /Game/Nezha/Map/Core/LaunchMap/BP_LaunchGameMode.Default__BP_LaunchGameMode_C Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:010][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_LaunchGameMode_C /Game/Nezha/Map/Core/LaunchMap/BP_LaunchGameMode.Default__BP_LaunchGameMode_C Frequency=10.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:010][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): LaunchMap_C /Game/Nezha/Map/Core/LaunchMap/LaunchMap.Default__LaunchMap_C Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:010][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): LaunchMap_C /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.LaunchMap_C_1 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:010][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): NzWorldSettings /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.NzWoldSettings Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:010][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): NzWorldSettings /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.NzWoldSettings Frequency=10.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:010][956]LogAudio: Display: Audio Device (ID: 1) registered with world 'LaunchMap'.
+[2026.10.31-19.46.12:011][956]LogHavokNavTest: SamsaraWorldSubsystem_2147475867 (00000002CD46AA80): USamsaraWorldSubsystem::Initialize ()
+[2026.10.31-19.46.12:011][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BuoyancyManager /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.BuoyancyManager_2147475856 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:011][956]LogNzCommon: InitTickFunction: NzTick_TG_PrePhysics, Priority=0
+[2026.10.31-19.46.12:011][956]LogNzCommon: InitTickFunction: NzTick_TG_StartPhysics, Priority=0
+[2026.10.31-19.46.12:011][956]LogNzCommon: InitTickFunction: NzTick_TG_DuringPhysics, Priority=0
+[2026.10.31-19.46.12:011][956]LogNzCommon: InitTickFunction: NzTick_TG_EndPhysics, Priority=0
+[2026.10.31-19.46.12:012][956]LogNzCommon: InitTickFunction: NzTick_TG_PostPhysics, Priority=100
+[2026.10.31-19.46.12:012][956]LogNzCommon: InitTickFunction: NzTick_TG_LastDemotable, Priority=0
+[2026.10.31-19.46.12:012][956]LogNzCommon: InitTickFunction: NzTick_PreMovement, Priority=700
+[2026.10.31-19.46.12:012][956]LogNzCommon: InitTickFunction: NzTick_PostMovement, Priority=400
+[2026.10.31-19.46.12:012][956]LogLandscapeLayer: Skipping landscape layer subsystem creation for map: /Game/Nezha/Map/Core/LaunchMap/LaunchMap
+[2026.10.31-19.46.12:015][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): DefaultPhysicsVolume /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.DefaultPhysicsVolume_2147475817 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:017][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): DefaultPhysicsVolume /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.DefaultPhysicsVolume_2147475817 Frequency=0.100000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:018][956]LogLaunch: : Initialize. bHasLaunched=False
+[2026.10.31-19.46.12:018][956]LogLoad: Game class is 'BP_LaunchGameMode_C'
+[2026.10.31-19.46.12:018][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_LaunchGameMode_C /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.BP_LaunchGameMode_C_2147475804 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:018][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_LaunchGameMode_C /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.BP_LaunchGameMode_C_2147475804 Frequency=10.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:018][956]LogWorld: Bringing World /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap up for play (max tick rate 0) at 2026.10.31-19.46.12
+[2026.10.31-19.46.12:018][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): GameSession /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.GameSession_2147475798 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:018][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): GameSession /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.GameSession_2147475798 Frequency=10.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:018][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): ParticleEventManager /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.ParticleEventManager_2147475797 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:018][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): GameStateBase /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.GameStateBase_2147475795 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:018][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): GameStateBase /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.GameStateBase_2147475795 Frequency=10.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:018][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): GameNetworkManager /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.GameNetworkManager_2147475794 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:018][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): GameNetworkManager /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.GameNetworkManager_2147475794 Frequency=10.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:018][956]LogWorld: Bringing up level for play took: 0.000300
+[2026.10.31-19.46.12:018][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): AbstractNavData /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.AbstractNavData_2147475793 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:018][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): BP_LaunchPlayerController_C /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.BP_LaunchPlayerController_C_2147475791 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:018][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): PlayerState /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.PlayerState_2147475790 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:018][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): PlayerState /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.PlayerState_2147475790 Frequency=10.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:018][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): PlayerState /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.PlayerState_2147475790 Frequency=1.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:019][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): PlayerCameraManager /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.PlayerCameraManager_2147475789 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:019][956]LogGameMode: FindPlayerStart: PATHS NOT DEFINED or NO PLAYERSTART with positive rating
+[2026.10.31-19.46.12:019][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): SpectatorPawn /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.SpectatorPawn_2147475784 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:019][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): SpectatorPawn /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.SpectatorPawn_2147475784 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:019][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): HUD /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.HUD_2147475783 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:019][956]LogGameMode: Verbose: RestartPlayerAtPlayerStart 0
+[2026.10.31-19.46.12:019][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): DefaultPawn /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.DefaultPawn_2147475781 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:019][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): DefaultPawn /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.DefaultPawn_2147475781 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:019][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): NzDebugDrawActor /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.NzDebugDrawActor_2147475780 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:019][956]LogNzRobot: Verbose: NZ_AUTOMATION_BUILD_CL cl=1055461 version=5.5.4-1055461+++NZProject+UnrealProject+cb1 asset_version=0.3.17.18.51
+[2026.10.31-19.46.12:091][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): NiagaraUIActor /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.NiagaraUIActor_2147475642 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:092][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): NiagaraUIActor /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.NiagaraUIActor_2147475640 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:113][956]LogMovieSceneECS: Warning: Unable to resolve property 'Clipping != EWidgetClipping::Inherit' from 'SizeBox' instance 'SizeText'
+[2026.10.31-19.46.12:115][956]LogMovieScene: Warning: Unable to resolve property 'Clipping != EWidgetClipping::Inherit' from 'SizeBox' instance 'SizeText'
+[2026.10.31-19.46.12:115][956]LogLaunch: : StartUpdate.
+[2026.10.31-19.46.12:115][956]LogLaunch: : UpdateWorldPhase. Phase=PreUpdate(1)
+[2026.10.31-19.46.12:115][956]LogNet: Verbose: AActor::SetNetUpdateFrequency(): LevelSequenceActor /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.LevelSequenceActor_2147475617 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.12:115][956]LogElectraPlayerPlugin: [00000000332D1790] IMediaPlayer::Open: Options@00000002AC974948
+[2026.10.31-19.46.12:117][956]LogElectraPlayer: [00000000AE216280][00000001363E7710] IMediaPlayer::Open(file://...)
+[2026.10.31-19.46.12:118][956]LogLaunch: : OnUpdateCompleted.
+[2026.10.31-19.46.12:118][956]LogLaunch: : UpdateWorldPhase. Phase=PostUpdate(3)
+[2026.10.31-19.46.12:118][956]LogLaunch: : UpdateWorldPhase. Phase=PreProcessStepFinished(4)
+[2026.10.31-19.46.12:118][956]LogGameSetting: SetNZFrameRateLimit To 0, Reason 1
+[2026.10.31-19.46.12:119][956]LogDLSSBlueprint: Warning: RR is not supported because no need to reconstruct rays if there are no rays to reconstruct ¯'_(ツ)_/¯
+[2026.10.31-19.46.12:119][956]LogDLSSBlueprint: Warning: RR is not supported because no need to reconstruct rays if there are no rays to reconstruct ¯'_(ツ)_/¯
+[2026.10.31-19.46.12:120][956]LogGameSetting: SetNZDLSSModelPreset To 5, Reason 1
+[2026.10.31-19.46.12:120][956]LogMemory: USDKBridgeHelper::EventOutflow: Line=331, Start
+[2026.10.31-19.46.12:120][956]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=854, Start
+[2026.10.31-19.46.12:124][956]LogMemory: [Steven.Han]FApiInterface::EventOutflow: Line=876, End
+[2026.10.31-19.46.12:125][956]LogMemory: USDKBridgeHelper::EventOutflow: Line=333, End
+[2026.10.31-19.46.12:125][956]LogLaunch: : BeginPlay. bHasLaunched=True
+[2026.10.31-19.46.12:125][956]LogLoad: Took 0.178263 seconds to LoadMap(/Game/Nezha/Map/Core/LaunchMap/LaunchMap)
+[2026.10.31-19.46.12:125][956]LogGlobalStatus: UEngine::LoadMap Load map complete /Game/Nezha/Map/Core/LaunchMap/LaunchMap
+[2026.10.31-19.46.12:128][956]LogUObjectHash: Compacting FUObjectHashTables data took   1.01ms
+[2026.10.31-19.46.12:135][956]LogUObjectHash: Compacting FUObjectHashTables data took   0.27ms
+[2026.10.31-19.46.12:320][982]LogElectraPlayer: [00000000AE216280][00000001363E7710] MP4 playlist reader: The mp4 at "file://..." is not fast-startable. Consider moving the 'moov' box in front of the 'mdat' for faster startup times.
+[2026.10.31-19.46.12:327][983]LogElectraPlayerPlugin: [00000000332D1790] IMediaControls::SetRate(1.000000)
+[2026.10.31-19.46.12:333][984]LogElectraPlayer: [00000000AE216280][00000001363E7710] Player switched video quality to 15686742 bps from 0 bps. 0 upswitches, 0 downswitches (0 drastic ones)
+[2026.10.31-19.46.12:486][  6]LogElectraPlayer: [00000000AE216280][00000001363E7710] Playback started at play position 0.000
+[2026.10.31-19.46.12:486][  6]LogElectraPlayer: [00000000AE216280][00000001363E7710] Playback resumed at play position 0.000
+[2026.10.31-19.46.12:530][ 12]LogLoadingScreen: ShouldShowLoadingScreen (nothing wants to show it anymore) 0
+[2026.10.31-19.46.12:950][ 72]LogLoadingScreen: ShouldShowLoadingScreen (nothing wants to show it anymore) 0
+[2026.10.31-19.46.13:396][132]LogLoadingScreen: ShouldShowLoadingScreen (nothing wants to show it anymore) 0
+[2026.10.31-19.46.13:912][192]LogLoadingScreen: ShouldShowLoadingScreen (nothing wants to show it anymore) 0
+[2026.10.31-19.46.14:133][216]LogLoadingScreen: Hiding loading screen when 'IsShowingInitialLoadingScreen()' is false.
+[2026.10.31-19.46.14:134][216]LogLoadingScreen: (nothing wants to show it anymore)
+[2026.10.31-19.46.14:135][216]LogLoadingScreen: Garbage Collecting before dropping load screen
+[2026.10.31-19.46.14:139][216]LogUObjectHash: Compacting FUObjectHashTables data took   0.62ms
+[2026.10.31-19.46.15:761][387]LogElectraPlayer: [00000000AE216280][00000001363E7710] Playback paused at play position 3.371
+[2026.10.31-19.46.15:761][387]LogElectraPlayer: [00000000AE216280][00000001363E7710] Playback reached end at play position 3.371
+[2026.10.31-19.46.15:764][387]LogAkAudio: Warning: UAkGameplayStatics::ExecuteStopActionOnPlayingID: Invalid Playing ID!
+[2026.10.31-19.46.15:764][387]LogElectraPlayer: [00000000AE216280][00000001363E7710] IMediaPlayer::Close()
+[2026.10.31-19.46.15:764][387]LogElectraPlayer: [00000000AE216280][00000001363E7710] Playback stopped. Last play position 3.371
+[2026.10.31-19.46.15:764][387]LogElectraPlayerPlugin: [00000000332D1790] IMediaPlayer::Open: Options@000000012C699388
+[2026.10.31-19.46.15:764][387]LogElectraPlayer: [00000000AE216280][0000000131307C90] IMediaPlayer::Open(file://...)
+[2026.10.31-19.46.15:764][387]LogNet: Verbose: AActor::SetNetUpdateFrequency(): LevelSequenceActor /Game/Nezha/Map/Core/LaunchMap/LaunchMap.LaunchMap:PersistentLevel.LevelSequenceActor_2147475604 Frequency=100.000000 HasActorBegunPlay()=0
+[2026.10.31-19.46.15:773][388]LogLoadingScreen: LoadingScreenWidget: K2_FinishLoadingScreen
+[2026.10.31-19.46.15:773][388]LogLoadingScreen:  StopBlockingInput
+[2026.10.31-19.46.15:773][388]LogRHI: ShaderPipelineCache: Batch mode changed (0): Size: 200 -> 1, Time: 16.000000 -> 0.000000
+[2026.10.31-19.46.15:774][388]LogCore: Display: Setting hang detector multiplier to 1.0000s. New hang duration: 0.0000s. New present duration: 0.0000s.
+[2026.10.31-19.46.15:774][388]LogLoadingScreen: LoadingScreen was visible for 34.01s
+[2026.10.31-19.46.16:018][424]LogElectraPlayer: [00000000AE216280][0000000131307C90] MP4 playlist reader: The mp4 at "file://..." is not fast-startable. Consider moving the 'moov' box in front of the 'mdat' for faster startup times.
+[2026.10.31-19.46.16:018][424]LogElectraPlayerPlugin: [00000000332D1790] IMediaControls::SetRate(1.000000)
+[2026.10.31-19.46.16:025][425]LogElectraPlayer: [00000000AE216280][0000000131307C90] Player switched video quality to 14859717 bps from 0 bps. 0 upswitches, 0 downswitches (0 drastic ones)
+[2026.10.31-19.46.16:206][451]LogElectraPlayer: [00000000AE216280][0000000131307C90] Playback started at play position 0.000
+[2026.10.31-19.46.16:206][451]LogElectraPlayer: [00000000AE216280][0000000131307C90] Playback resumed at play position 0.000
+[2026.10.31-19.46.20:448][ 62]LogElectraPlayer: [00000000AE216280][0000000131307C90] Playback paused at play position 4.310
+[2026.10.31-19.46.20:449][ 62]LogElectraPlayer: [00000000AE216280][0000000131307C90] Playback reached end at play position 4.310
+[2026.10.31-19.46.20:450][ 62]LogElectraPlayer: [00000000AE216280][0000000131307C90] IMediaPlayer::Close()
+[2026.10.31-19.46.20:450][ 62]LogElectraPlayer: [00000000AE216280][0000000131307C90] Playback stopped. Last play position 4.310
+[2026.10.31-19.46.20:450][ 62]LogElectraPlayerPlugin: [00000000332D1790] IMediaPlayer::Open: Options@00000000E2594E18
+[2026.10.31-19.46.20:450][ 62]LogElectraPlayer: [00000000AE216280][000000027392B910] IMediaPlayer::Open(file://...)
+[2026.10.31-19.46.20:450][ 62]LogLaunch: : PerformSDKLogin – already SDK-logged-in, skip
+[2026.10.31-19.46.20:450][ 62]LogLaunch: : UpdateWorldPhase. Phase=PostLogin(6)
+[2026.10.31-19.46.20:450][ 62]LogMemory: USDKBridgeHelper::Placard: Line=226, Start
+[2026.10.31-19.46.20:450][ 62]LogMemory: [Steven.Han]FApiInterface::Placard: Line=353, Start
+[2026.10.31-19.46.20:453][ 62]LogTemp: UE Placard Called!
+[2026.10.31-19.46.20:453][ 62]LogMemory: [Steven.Han]FApiInterface::Placard: Line=370, End
+[2026.10.31-19.46.20:453][ 62]LogMemory: USDKBridgeHelper::Placard: Line=228, End
+[2026.10.31-19.46.20:480][ 63]LogTemp: --------------  UE callback ------------------
+[2026.10.31-19.46.20:480][ 63]LogTemp: Warning: UE callback Result:
  {"opcode":"PLACARD","msg":"ok","data":[]}
-[2026.10.31-02.38.14:718][554]LogTemp: --------------  UE callback ------------------
-[2026.10.31-02.38.14:719][554]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=13, Start
-[2026.10.31-02.38.14:719][554]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=22, JsonResult={"opcode":"PLACARD","msg":"ok","data":[]}
-[2026.10.31-02.38.14:719][554]LogSDKSubSystem: SDKSubSystem: OnSdkBridgeCallback: {"opcode":"PLACARD","msg":"ok","data":[]}
-[2026.10.31-02.38.14:719][554]LogSDKSubSystem: SDKSubSystem: Placard callback received. Success=1 ItemCount=0
-[2026.10.31-02.38.14:719][554]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=26, End
-[2026.10.31-02.38.14:954][588]LogElectraPlayer: [00000000309ABE60][00000000FABFCD90] MP4 playlist reader: The mp4 at "file://..." is not fast-startable. Consider moving the 'moov' box in front of the 'mdat' for faster startup times.
-[2026.10.31-02.38.14:954][588]LogElectraPlayerPlugin: [00000000354A4490] IMediaControls::SetRate(1.000000)
-[2026.10.31-02.38.14:960][589]LogElectraPlayer: [00000000309ABE60][00000000FABFCD90] Player switched video quality to 15703149 bps from 0 bps. 0 upswitches, 0 downswitches (0 drastic ones)
-[2026.10.31-02.38.15:099][609]LogElectraPlayer: [00000000309ABE60][00000000FABFCD90] Playback started at play position 0.000
-[2026.10.31-02.38.15:099][609]LogElectraPlayer: [00000000309ABE60][00000000FABFCD90] Playback resumed at play position 0.000
+[2026.10.31-19.46.20:481][ 63]LogTemp: --------------  UE callback ------------------
+[2026.10.31-19.46.20:482][ 63]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=13, Start
+[2026.10.31-19.46.20:482][ 63]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=22, JsonResult={"opcode":"PLACARD","msg":"ok","data":[]}
+[2026.10.31-19.46.20:482][ 63]LogSDKSubSystem: SDKSubSystem: OnSdkBridgeCallback: {"opcode":"PLACARD","msg":"ok","data":[]}
+[2026.10.31-19.46.20:482][ 63]LogSDKSubSystem: SDKSubSystem: Placard callback received. Success=1 ItemCount=0
+[2026.10.31-19.46.20:482][ 63]LogMemory: [Steven.Han]FPlatformCallback::OnResult: Line=26, End
+[2026.10.31-19.46.20:717][ 97]LogElectraPlayer: [00000000AE216280][000000027392B910] MP4 playlist reader: The mp4 at "file://..." is not fast-startable. Consider moving the 'moov' box in front of the 'mdat' for faster startup times.
+[2026.10.31-19.46.20:717][ 97]LogElectraPlayerPlugin: [00000000332D1790] IMediaControls::SetRate(1.000000)
+[2026.10.31-19.46.20:723][ 98]LogElectraPlayer: [00000000AE216280][000000027392B910] Player switched video quality to 15703149 bps from 0 bps. 0 upswitches, 0 downswitches (0 drastic ones)
+[2026.10.31-19.46.20:883][121]LogElectraPlayer: [00000000AE216280][000000027392B910] Playback started at play position 0.000
+[2026.10.31-19.46.20:883][121]LogElectraPlayer: [00000000AE216280][000000027392B910] Playback resumed at play position 0.000

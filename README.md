@@ -1,1 +1,1 @@
-# sdsdsdsd
+Local bypass for WeiMianYe. Currently at StatelessConnect handshake: client accepts packet (Incoming success, no SetError) but doesn't recognize it as challenge (30s timeout). Need correct field values in ServerChallenge.

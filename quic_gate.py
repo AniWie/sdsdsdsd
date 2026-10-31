@@ -496,207 +496,114 @@ class GOSGateProtocol(QuicConnectionProtocol):
         return bytes(frame)
 
     def _build_ue_handshake(self, payload):
-        """Respond to a UE StatelessConnect ClientHello tunneled in msgID=0.
-
-        Offline analysis (HANDSHAKE_ANALYSIS.md + dumps of 0x14406bbf0 /
-        0x14135ab40 / 0x14402ab50 from live memory, pid 34460):
-
-        The payload is a bit-serialized UE control packet. Observed hello:
-          a4 | 01 02 00 80 | 6c ee 1b 78 | 00*NN | <integrity tail 9-13B>
-        - The u32 '01 02 00 80' (LE 0x80000201) is a UE BUNCH HEADER:
-            [Ack:14 (bits 18-31)][Seq:14 (bits 4-17)][NumChunks:4 (bits 0-3)]
-          => Ack=8192, Seq=32, Chunks=1. The alternating substream 0x80800201 has
-          Ack=8224 (two logical bunch streams).
-        - '6c ee 1b 78' is the FIRST CHUNK dword — the client's cookie. The client's
-          Incoming validator (0x14403f50b) walks its cookie-entry list
-          (entry: State dword @+0, Time double @+0x10, Next @+0x28) requiring
-          State==0x70 — entries are created by the client's OWN hello chunks.
-          v1/v2 failed because our response carried a foreign cookie ('znZZ') that
-          matched no entry.
-        - v4: echo the client's chunk dword back, wrapped in a bunch header whose
-          Ack = the client's Seq, and keep the control prefix byte 'a2' (accepted
-          by the parser in v2 — the reject happened later, at the walk).
-        """
-        if not payload or len(payload) < 9:
-            log(f"UE-HS: payload too short ({len(payload) if payload else 0}B), echoing")
+        # v35 (fix from the Discord analysis): the ClientHello is a
+        # LITTLE-ENDIAN bitstream starting at bit 0 (stream bit N lives in
+        # byte N//8 at bit N%8; every field is serialized LSB-first), NOT a
+        # UE bunch header at byte 1. payload[1:5] == 0x80000201 is NOT
+        # Ack/Seq/Chunks — those bits ARE the StatelessConnect fields:
+        #   bits 0-1   SessionID        bits 2-4   ClientID
+        #   bit  5     Handshake = 1    bit  6     RestartHandshake
+        #   bits 7-14  MinVersion       bits 15-22 CurrentVersion
+        #   bits 23-30 PacketType (0=Initial, 1=Challenge, ...)
+        #   bits 31-38 SentHandshakePacketCount
+        #   bits 39-70 NetworkVersion (u32, LSB-first)
+        #   bits 71-86 NetworkFeatures (u16)
+        #   bit  87    SecretId (1 bit)
+        #   bits 88+   body: double timestamp, 20-byte cookie, random,
+        #              terminating bit, zero padding
+        # Proof of bit order: hello 0xa4 -> LSB-first bits2-4 = ClientID 1,
+        # matching the client log 'Stateless Handshake ... CachedClientID: 1'.
+        # The old v32/v34 code copied the client's header bytes and flipped
+        # MSB-first bits 23-30, which the LSB-first validator decoded as a
+        # wrong PacketType (5) -> challenge silently ignored -> 30s timeout.
+        if len(payload) < 11:
             return payload
-        # Parse the hello
-        ctrl = payload[0]                                   # 'a4' family
-        hdr = struct.unpack_from("<I", payload, 1)[0]       # bunch header
-        ack = (hdr >> 18) & 0x3FFF
-        seq = (hdr >> 4) & 0x3FFF
-        chunks = (hdr & 0xF) or 1
-        client_chunk = payload[5:9]                         # first chunk = cookie
-        log(f"UE-HS: ClientHello ctrl={ctrl:#04x} hdr={hdr:#010x} "
-            f"Ack={ack} Seq={seq} Chunks={chunks} cookie={client_chunk.hex()} "
-            f"full={payload.hex()}")
-        # v9 (post-v7/v6 full-code analysis, HANDSHAKE_ANALYSIS.md):
-        # 1. flags=0x00 (v7) routes the payload into the JS protobuf decode path —
-        #    'decode OnMessage 0' error. flags=0x10 IS the raw tunnel. Back to 0x10.
-        # 2. The client's control handler validates the bunch Seq/Ack against a
-        #    0x2000 window around its counters (0x14403ec6c: window checks vs
-        #    [rsi+0x1c84] etc.). v4/v6 rewrote the header (Seq=0, Ack=their Seq)
-        #    => OUT OF WINDOW => reject at 0x14403f0ad.
-        # 3. The PURE echo (original 'else' branch) NEVER errored — the client
-        #    retransmitted for 30s WAITING for the real challenge: structurally
-        #    accepted, semantically not an answer.
-        # v9: keep the hello's ENTIRE bit layout (ctrl, header, tail — all in the
-        #    client's own window), change ONLY the 4-byte chunk/cookie dword to a
-        #    challenge marker. If the walk matches by entry and the state machine
-        #    wants fresh cookie data, this is the minimal delta that stays valid.
-        # v11 (post-v10): v10 == v9 == silently accepted + 30s wait. Ctrl byte
-        # proved irrelevant. The untested hole in the matrix:
-        #   v4/v6: rewritten payload + Seq=0    -> REJECTED
-        #   v9/v10: echo payload + Seq=32(own)  -> accepted, ignored (own Seq => self-echo)
-        #   v11:  echo payload + Seq = clientSeq+1 (33), Ack = clientSeq (32)
-        # — a packet in the client's forward window (the 0x14403ec6c check requires
-        # Seq > lastInSeq within 0x2000) with an otherwise pristine echo body.
-        # This is the first response that is BOTH structurally native AND advances
-        # the sequence — the signature of a real server packet.
-        # v13 (post-v12, THE BREAKTHROUGH): flags=0x12 routed our payload to the
-        # Go formater (etcd.dll, nezha/std/cluster formater.go:619) which logged
-        # 'packet decode 0 <len> snappy: corrupt input' on EVERY reply — direct
-        # evidence the server->client msgID=0 payload must be SNAPPY-COMPRESSED
-        # (golang/snappy block format). The tunnel is asymmetric: client->server
-        # raw (flags=0x10), server->client snappy via the Go formater.
-        challenge_marker = b"\x5a\x5a\x6e\x7a"             # 'ZZnz' LE marker
-        hdr = struct.unpack_from("<I", payload, 1)[0]
-        seq = (hdr >> 4) & 0x3FFF
-        resp_hdr = (seq << 18) | ((seq + 1) << 4) | (hdr & 0xF)   # Ack=their Seq, Seq=theirSeq+1
-        resp = bytearray(payload)                           # exact echo of the hello
-        resp[1:5] = struct.pack("<I", resp_hdr)
-        resp[0] = 0xa2
-        resp[5:9] = challenge_marker
-        # v15 (THE decoded discriminator): the challenge-vs-data decision at
-        # 0x14403ed91-edab: r14d = Chunks-1; the CHALLENGE-DATA path is taken
-        # when al (challenge-pending flag) == 1 AND (Chunks-1) > ecx (a small
-        # global threshold). Our echo carried Chunks=1 => r14d=0 => path
-        # skipped => silent window-check reject. A real server challenge
-        # carries MULTIPLE chunk dwords. v15: Chunks=2 + a second challenge
-        # chunk appended after the cookie.
-        # v16 (00:26 run analysis): responses structurally valid, but the
-        # client drops the QUIC connection ~220ms after each response and
-        # reconnects (the '3 exchanges' are reconnect cycles, not retransmits).
-        # The response content doesn't satisfy the StatelessConnect state
-        # machine.
-        # v20-mirror (REJECT_ROOT_CAUSE.md, 30 Oct): the reject chain is PROVEN:
-        # PacketHandler::Incoming (0x14235fb30) sets error only via FBitReader
-        # OVERREAD (SetError, bit1 of reader+0x29); the observed 76ms reject is
-        # 'Packet failed PacketHandler processing.' (NetConnection.cpp:2058) +
-        # Close(27). The v19f deltas vs the hello (the only wire-proven VALID
-        # structure): tail 8B vs 12B, zero-run 45B vs 30B, chunks=3 vs 2,
-        # inserted chunk2. v20-mirror: reproduce the hello's EXACT byte
-        # structure — same length (51B), same zero-run (30B), same tail shape
-        # (01 + 11B random ending 01) — changing ONLY the header bits and ctrl:
-        # a2 + Ack=their Seq(32) + Seq=theirSeq+N + Chunks=2, cookie echoed
-        # unchanged. Single semantic variable: 'this is a server reply'.
-        # Readout per REJECT_ROOT_CAUSE.md:
-        #   reject ~76ms  -> overread is the version-14 extra-field sequence
-        #   timeout       -> server responses need >=59B (size gate); re-run with
-        #                    the ZERO RUN padded only (structure unchanged)
-        #   no close, no retransmit -> structurally accepted; next layer opens
-        self._ue_resp_count += 1
-        resp_seq = (seq + self._ue_resp_count) & 0x3FFF
-        # v23 (02:50 analysis): every client retransmit carries ack = 8192|N
-        # (hdr #1 0x80000201 ack=8192, #2 0x80800201 ack=8224, #3 0x81000201
-        # ack=8256): the TOP Ack bit (8192) is the challenge/restart flag.
-        # v19f-v22 all sent ack=32 WITHOUT the 8192 bit -> the client parsed
-        # our packet as NON-challenge data -> bunch-read misparse on
-        # challenge-format bits -> FBitReader overread -> SetError ->
-        # 'Packet failed' + Close(27). v22 run (02:49:25): 66B, 2 words,
-        # client's own tail, still rejected at 213ms — word count and tail
-        # are exonerated; the challenge bit is the remaining delta.
-        # v23: ack = 8192 | clientSeq (= 8224 for seq 32, exactly the shape
-        # of retransmit #2's header), seq = resp_seq, words = 2 (hello's own).
-        # v26 (31 Oct, PROVEN via VEH SetError-caller hook + UE log record):
-        # the 8192 ack bit IS bIsRestarted in the StatelessConnect
-        # secret-id header. Client decoded our v23 header, saw
-        # 'restart handshake request' while its cookie state != Authorised,
-        # logged "Server sent restart handshake request, when we don't have
-        # an authorised cookie." (StatelessConnectHandlerComponent.cpp) and
-        # SetError(reader,0) -> 'Packet failed PacketHandler processing.' +
-        # Close(27). The retransmits carry 8192|N because a RESTARTED client
-        # hello sets that bit - the SERVER response must NOT.
-        # v26: ack = plain clientSeq, no restart bit.
-        resp_hdr2 = (seq << 18) | (resp_seq << 4) | (hdr & 0xF)
-        resp = bytearray(payload)                        # hello's own bytes: cookie, zeros, tail
-        resp[1:5] = struct.pack("<I", resp_hdr2)
-        # v27: KEEP THE CLIENT'S OWN ctrl byte. v26 removed the 8192 ack bit but
-        # the reject persisted (same caller 0x14408e63d, same 'restart handshake'
-        # log) => bIsRestarted is NOT the ack bit. The hello ctrl varies per
-        # retransmit (a4, a8) and never carries bit1; our constant 0xa2
-        # (=1010_0010, bit1 SET) is the only bit the client never sends.
-        # ctrl bit1 = bIsRestarted. 0xa2 requests a restart => reject.
-        # v27: echo payload[0] unchanged.
-        # resp[0] stays as payload[0] (client's own ctrl: a4/a8/..)
-        # v20-mirror run (02:39, 31 retransmits, 30s Tick timeout): the 51-55B
-        # response never reached the parser — below the >=59B size gate
-        # (same silent-drop class as v9-v14). Structure untested, not rejected.
-        # v21: single variable vs v20-mirror = LENGTH. Pad the ZERO RUN ONLY
-        # (structure byte-for-byte identical, tail stays LAST):
-        #   a2 | hdr | cookie | 00*(66-tail) | <client's own tail>
-        # Readout:
-        #   reject ~76ms  -> overread in version-14 extra fields (chunk2/words)
-        #   silent/timeout -> size gate is not the (only) filter; dump live
-        #   no retransmit, no close -> challenge accepted; next layer opens
-        # v28 (31 Oct, DECODED from component disasm 0x14408eac0 -> validator
-        # 0x144096fd0/0x144097480): the client's StatelessConnect validator
-        # computes remaining=limit-pos and takes the SHORT branch (ours:
-        # 535-87=448) which reads ONE bit at pos=87 and REQUIRES it == 1
-        # (bIsChallenge of the server response). Our zero-run gives 0 ->
-        # validator returns false -> caller logs 'Server sent restart
-        # handshake request...' + SetError -> Close(27). All 2+3-bit flag
-        # rounds (bits 72..87) must stay 0 (compared vs [comp+0x160]=0), so
-        # bit 87 is the ONLY settable bit - by elimination AND by the
-        # validator's read position (byte 10, bit 7).
-        # v32 (31 Oct, 02:30, VALIDATOR HOOK GROUND TRUTH):
-        # The validator 0x144096fd0 entry dump: reader pos=6, limit=535,
-        # remaining=529. Branch selector: remaining == 0xe2(226) / 0x182(386)
-        # / 1 -> LONG branch (full challenge parse); ANYTHING ELSE -> SHORT
-        # branch reads ONE bit at pos=6 = ctrl byte bit6 and REQUIRES it == 1.
-        # Our 67B packet (535 bits) -> 529 remaining -> SHORT -> bit6 of
-        # echoed ctrl (a4) = 0 -> reject. All bit-86/87 theories were wrong:
-        # the reject is decided at STREAM BIT 6 = CTRL BIT 6.
-        # v32: set ctrl bit6 (0x40) AND size the packet for the LONG branch
-        # (49B = 392 bits, remaining at pos 6 = 386 = 0x182) so the real
-        # challenge parse runs:
-        #   [ctrl|0x40][hdr 4B][cookie 4B][challenge body 40B]
-        # v33 (LONG-branch field semantics): the validator reads
-        #   8 bits  @6..13  = {bIsRestarted(1) bIsChallenge(1) Type(3) SecretId(3)}
-        #   20 bits @14..33 = (inside hdr dword)
-        #   20 bits @34..53 = (hdr/cookie boundary)
-        # v34 (31 Oct 13:40): v33 FACTS: validator entry limit=384 pos=6
-        # remaining=378 -> NEITHER 386 NOR 226 (the 49B packet becomes 48B
-        # after the client's trailing-byte strip: limit = 48*8 = 384).
-        # 'Incoming return=0x00' (no reject!) but dl=[struct+0xa]=5 vs
-        # r15b=1 (expected type, set at 0x14408e409) -> MISMATCH -> ignored.
-        # The 0xe2 (226) branch sets [struct+0xa] = 1 when the double at
-        # [struct+0x10] > 0 and comp state == 0 -> dl=1 == r15b=1 -> ACCEPT.
-        # v34: 29-byte packet (232 bits; the client strips 1 trailing byte ->
-        # limit = 28*8 = 224; hmm - strip makes remaining 224-6=218, not 226.
-        # To get remaining 226 AFTER strip: limit must be 232 = 29B data...
-        # limit = (len-1)*8 with the trailing byte stripped. For limit=232:
-        # len-1 = 29 -> len=30B; remaining = 232-6 = 226. 30 bytes total.
-        ctrl_out = payload[0]                               # a4: bit6=0, bit7=1
-        seq_mod = (self._ue_resp_count + 47) & 0x3FF0       # seq ≡ 0 mod 16
-        hdr_v34 = (seq << 18) | (seq_mod << 4) | (hdr & 0xF)
-        resp = bytearray()
-        resp.append(ctrl_out)
-        resp.extend(struct.pack("<I", hdr_v34))
-        resp.extend(payload[5:9])                          # cookie echo
-        # body: 8-bit field lands at bits 6..13 (ctrl b6,7 + hdr byte0 b0..5)
-        # = 0x06 with a4 + hdr byte0 0x01 (seq_mod≡0 mod16, chunks=1).
-        # 20-bit field @14..33 from hdr dword bits. Pad to 30B, last byte
-        # nonzero.
-        rest = bytearray(b"\x00" * (30 - 9))
-        rest[0] = 0x06
-        resp.extend(rest)
-        resp[29] = 0x01
+
+        def rd(n, pos):
+            v = 0
+            for i in range(n):
+                v |= ((payload[(pos + i) >> 3] >> ((pos + i) & 7)) & 1) << i
+            return v, pos + n
+
+        pos = 0
+        session_id, pos = rd(2, pos)
+        client_id, pos = rd(3, pos)
+        handshake_bit, pos = rd(1, pos)
+        restart, pos = rd(1, pos)
+        min_version, pos = rd(8, pos)
+        cur_version, pos = rd(8, pos)
+        pkt_type, pos = rd(8, pos)
+        sent_count, pos = rd(8, pos)
+        network_version, pos = rd(32, pos)
+        network_features, pos = rd(16, pos)
+        secret_id, pos = rd(1, pos)
+        log(f"UE-HS: parsed sid={session_id} cid={client_id} hs={handshake_bit} "
+            f"restart={restart} minVer={min_version} curVer={cur_version} type={pkt_type} "
+            f"sent={sent_count} netVer={network_version:#010x} feats={network_features:#06x} "
+            f"secret={secret_id}")
+
+        body_pos = 88
+        if pkt_type == 2 and len(payload) >= (88 + 64 + 160) // 8: 
+            ts_bits = 0
+            for i in range(64):
+                ts_bits |= ((payload[(body_pos + i) >> 3] >> ((body_pos + i) & 7)) & 1) << i
+            cookie_bits = bytearray(20)
+            for i in range(160):
+                cookie_bits[i >> 3] |= ((payload[(body_pos + 64 + i) >> 3] >> ((body_pos + 64 + i) & 7)) & 1) << (i & 7)
+            self._last_resp_ts = ts_bits
+            self._last_resp_cookie = bytes(cookie_bits)
+            log(f"UE-HS: Response body ts_bits={ts_bits:#018x} cookie={bytes(cookie_bits).hex()}")
+
+        out_bits = []
+
+        def wr(v, n):
+            for i in range(n):
+                out_bits.append((v >> i) & 1)
+
+        wr(session_id, 2)
+        wr(client_id, 3)
+        out_bits.append(1)
+        out_bits.append(0)
+        wr(min_version, 8)
+        wr(cur_version, 8)
+        if pkt_type == 2:
+            reply_type = 3
+        else:
+            reply_type = 1
+        wr(reply_type, 8)
+        wr(sent_count, 8)
+        wr(network_version, 32)
+        wr(network_features, 16)
+        out_bits.append(secret_id)
+
+        if reply_type == 3 and getattr(self, "_last_resp_ts", None) is not None:
+            wr(self._last_resp_ts, 64)
+            for b in self._last_resp_cookie:
+                wr(b, 8)
+        else:
+            ts = time.time()
+            wr(struct.unpack("<Q", struct.pack("<d", ts))[0], 64)
+            cookie = os.urandom(20)
+            for b in cookie:
+                wr(b, 8)
+
+        import random as _random
+        while len(out_bits) < 384:
+            out_bits.append(_random.getrandbits(1))
+        out_bits.append(1)
+        while len(out_bits) < 392:
+            out_bits.append(0)
+
+        out = bytearray()
+        for byte_i in range(392 // 8):
+            b = 0
+            for bit_i in range(8):
+                b |= out_bits[(byte_i << 3) + bit_i] << bit_i
+            out.append(b)
+
+        log(f"UE-HS: ServerReply type={reply_type} ({len(out)}B): raw={bytes(out).hex()}")
         import snappy
-        compressed = snappy.compress(bytes(resp))
-        log(f"UE-HS: ServerResponse v34 ({len(resp)}B, ctrl={ctrl_out:#04x}, "
-            f"ack={seq}, Seq={resp_seq}): raw={bytes(resp).hex()}")
-        return compressed
+        return snappy.compress(bytes(out))
 
     def _build_connect_gate(self):
         """CONNECT_GATE (msgID 103) -> Ds2Gate2DsConnect payload.

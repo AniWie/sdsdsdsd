@@ -646,13 +646,30 @@ class GOSGateProtocol(QuicConnectionProtocol):
             self._rel_seq = 1               # seq 0 was consumed by the
                                              # first exchange (client acked it)
         ack = cli_seq                        # ack = their last seq
+        data = payload[9:]
         out = bytearray()
         out.append(0x04)
         out += _s.pack("<H", ack)
         out += _s.pack("<H", self._rel_seq)
         self._rel_seq = (self._rel_seq + 1) & 0xFFFF
         out += payload[5:9]                  # history word: echo client's
-        out += payload[9:]                   # echo the data payload
+        # v39: raw echo of the client's data caused
+        # BunchHeaderOverflow/BunchDataOverflow on the client (20:36 run):
+        # the client's A-packet 'ff 4f 00 04 ...' decoded as a NZ bunch
+        # header gives Chunks=15 (+1=16, capped 8 dwords = 32B) while only
+        # 17 bytes remained -> overflow. The bunch parser (0x14406bbf0)
+        # reads [u32 LE: Ack:14|Seq:14|Chunks:4] + N dwords (cap 8).
+        # So for OUR outgoing data we must emit a VALID bunch: a header
+        # the parser accepts (Chunks small, Seq/Ack within the window) and
+        # one chunk of payload. Empirical iteration: log what the client
+        # sends next to calibrate the fields.
+        if len(data) >= 4:
+            body = data[4:]                  # chunk = client's data minus hdr
+            bunch = _s.pack("<I", (1 << 18) | (1 << 4) | 0)  # Ack=1 Seq=1 Chunks=0(+1)
+            out += bunch
+            out += body[:32]                 # one chunk dword row (cap)
+        else:
+            out += data                      # 2B packets: pass through
         log(f"UE-REL: cli_ack={cli_ack:#06x} cli_seq={cli_seq} (raw={raw:#06x}) "
             f"ack={ack} data_len={len(payload)-9} reply={bytes(out).hex()}")
         import snappy

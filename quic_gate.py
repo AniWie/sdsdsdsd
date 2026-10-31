@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """
 QUIC GOS gate server for WeiMianYe.
 
@@ -476,7 +475,20 @@ class GOSGateProtocol(QuicConnectionProtocol):
             # state change, 30s timeout). The Incoming dispatch dataFlag (r8b)
             # derives from the tunnel layer; bit1 of the flags byte is the
             # untested data-packet marker.
-            resp_pb = self._build_ue_handshake(payload)
+            # v38: after the stateless Ack completes, the client moves to the
+            # PacketHandler RELIABLE component layer: packets
+            # '04 <u16 ack LE> <u16 seq+flag LE> <history 4B> <data...>'
+            # (handshake version 4). The FIRST client packet carries the
+            # 'nothing acked yet' sentinel ack 0xfffc; after it accepts our
+            # first reply the ack field carries OUR seq (e.g. 00 00) — so the
+            # discriminator must be the version byte + structure, NOT the
+            # ack value (v38.1 bug: 'fc ff' check only matched the sentinel
+            # and all later reliable packets fell into the StatelessConnect
+            # builder -> garbage replies -> 30s timeout).
+            if len(payload) >= 9 and payload[0] == 0x04:
+                resp_pb = self._build_reliable_reply(payload)
+            else:
+                resp_pb = self._build_ue_handshake(payload)
             resp_type = 0
             resp_flags = 0x12
         else:
@@ -576,9 +588,15 @@ class GOSGateProtocol(QuicConnectionProtocol):
         wr(network_features, 16)
         out_bits.append(secret_id)
 
-        if reply_type == 3 and getattr(self, "_last_resp_ts", None) is not None:
-            wr(self._last_resp_ts, 64)
-            for b in self._last_resp_cookie:
+        if reply_type == 3 and getattr(self, "_last_resp_cookie", None) is not None:
+            # v37 (Kei-Luna): the Ack body is NOT a verbatim echo. The server
+            # must change it: Timestamp = -1.0 (LE double: 00 00 00 00 00 00
+            # F0 BF) and the first 4 cookie bytes cleared, remaining 16 kept
+            # from the client's Response.
+            wr(struct.unpack("<Q", struct.pack("<d", -1.0))[0], 64)
+            cookie_ack = bytearray(self._last_resp_cookie)
+            cookie_ack[0:4] = b"\x00\x00\x00\x00"
+            for b in cookie_ack:
                 wr(b, 8)
         else:
             ts = time.time()
@@ -602,6 +620,41 @@ class GOSGateProtocol(QuicConnectionProtocol):
             out.append(b)
 
         log(f"UE-HS: ServerReply type={reply_type} ({len(out)}B): raw={bytes(out).hex()}")
+        import snappy
+        return snappy.compress(bytes(out))
+
+    def _build_reliable_reply(self, payload):
+        # v38.2: UE 5.5 FReliableHandlerComponent layer (post-stateless
+        # phase). Client packet layout (byte-aligned, wire-verified):
+        #   [0]      0x04 = reliable handshake version
+        #   [1:3]    u16 LE acked-seq (0xfffc sentinel on the FIRST packet,
+        #            then the seq of OUR last packet they accepted)
+        #   [3:5]    u16 LE this packet's seq; bit14 (0x4000) = flag
+        #            (set on data resends after our reply was accepted)
+        #   [5:9]    32-bit sequence history (000000c0 early on)
+        #   [9:]     channel-serialized data (bunches / NMT messages)
+        # 20:27 run proof: after our first reply (our seq 0) the client's
+        # next packets carried ack=00 00 (= our seq 0) — the reliable ack
+        # exchange WORKS; only the dispatcher was broken (v38.1).
+        # Reply: ack the client's raw seq (mask off the 0x4000 flag bit),
+        # advance our own seq, copy their history word, echo their data.
+        import struct as _s
+        raw = _s.unpack_from("<H", payload, 3)[0]
+        cli_seq = raw & 0x3FFF
+        cli_ack = _s.unpack_from("<H", payload, 1)[0]
+        if not hasattr(self, "_rel_seq"):
+            self._rel_seq = 1               # seq 0 was consumed by the
+                                             # first exchange (client acked it)
+        ack = cli_seq                        # ack = their last seq
+        out = bytearray()
+        out.append(0x04)
+        out += _s.pack("<H", ack)
+        out += _s.pack("<H", self._rel_seq)
+        self._rel_seq = (self._rel_seq + 1) & 0xFFFF
+        out += payload[5:9]                  # history word: echo client's
+        out += payload[9:]                   # echo the data payload
+        log(f"UE-REL: cli_ack={cli_ack:#06x} cli_seq={cli_seq} (raw={raw:#06x}) "
+            f"ack={ack} data_len={len(payload)-9} reply={bytes(out).hex()}")
         import snappy
         return snappy.compress(bytes(out))
 

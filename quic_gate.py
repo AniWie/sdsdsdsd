@@ -107,6 +107,41 @@ def log(msg):
         f.write(line + "\n")
 
 
+def snappy_compress_compat(data):
+    """v45: literal-only snappy encoder.
+
+    The 04:00 run proved the client's Go-side snappy decoder (etcd.dll,
+    formater.go:619 'packet decode 0 10 snappy: corrupt input') rejects
+    streams that python-snappy's C decoder accepts: python's compressor
+    emitted a copy tag ('01 0b' in the 04:11 frame) whose offset decodes
+    as 0 under the strict golang/snappy layout — python is lenient, Go
+    returns ErrCorrupt, the whole UE tunnel frame is dropped, the
+    reliable layer never sees our replies (cli_ack frozen at 0xfffc,
+    bunch parser never called, 30s timeout).
+
+    Fix: emit ONLY literal tags (universally compatible — every snappy
+    decoder accepts literals). Compression ratio is worse, but our
+    packets are <200B. Wire-verified roundtrip locally.
+    """
+    out = bytearray()
+    n = len(data)
+    while True:
+        b = n & 0x7F
+        n >>= 7
+        if n:
+            out.append(b | 0x80)
+        else:
+            out.append(b)
+            break
+    i = 0
+    while i < len(data):
+        chunk = data[i:i + 60]
+        out.append(((len(chunk) - 1) << 2) | 0)
+        out += chunk
+        i += 60
+    return bytes(out)
+
+
 def hexdump(data, max_bytes=512):
     if not data:
         return "(empty)"
@@ -620,8 +655,9 @@ class GOSGateProtocol(QuicConnectionProtocol):
             out.append(b)
 
         log(f"UE-HS: ServerReply type={reply_type} ({len(out)}B): raw={bytes(out).hex()}")
-        import snappy
-        return snappy.compress(bytes(out))
+        # v45: literal-only snappy (python-snappy's copy tags are rejected
+        # by the client's Go decoder — see snappy_compress_compat).
+        return snappy_compress_compat(bytes(out))
 
     def _build_reliable_reply(self, payload):
         # v38.2: UE 5.5 FReliableHandlerComponent layer (post-stateless
@@ -723,15 +759,23 @@ class GOSGateProtocol(QuicConnectionProtocol):
         # Field widths unconfirmed. Keep v42.6 layout; calibrate NumBits
         # via QG_NUMBITS env (0 / 264 comparison run pair).
         import os as _os
-        numbits_field = int(getattr(_os.environ, "QG_NUMBITS", "264") or 264)
+        # v45.2: DEFAULT = the EXACT wire-proven accepted layout (v42.4,
+        # 23:45 run — the only config where the client ever acked our
+        # reliable packets, cli_ack 0x0004->0x0008->0x0018):
+        #   ChIndex(10)=0, ChType(2)=0, bOpen(12)=1, 9 flag bits 0,
+        #   ChName(8)=0, NMT id=1 at bit 30, 64 bits NMT fields,
+        #   3 terminator bytes '01 01 01'. NO NumBits field, bReliable=0.
+        #   Body hex: '00 10 00 40 00*33 01 01 01' (43B).
+        # QG_NUMBITS: -1 (default) = this exact layout; >=0 inserts a
+        # 16-bit NumBits field before the NMT id (calibration only —
+        # untested, correlates with cli_ack freeze in v42.6-43.1).
+        numbits_field = int(getattr(_os.environ, "QG_NUMBITS", "-1") or -1)
         wrb(0, 12)      # ChIndex(10)=0 + ChType(2)=0
         wrb(1, 1)       # bOpen = 1
-        wrb(0, 1)       # bClose
-        wrb(0, 1)       # bDormant
-        wrb(1, 1)       # bReliable = 1 (control bunches are reliable in UE)
-        wrb(0, 6)       # bPartial/PInit/PFinal/spares
+        wrb(0, 9)       # flags: bClose/bDormant/bReliable=0/spares (v42.4 width)
         wrb(0, 8)       # ChName length = 0
-        wrb(numbits_field, 16)   # NumBits (calibration via QG_NUMBITS env)
+        if numbits_field >= 0:
+            wrb(numbits_field, 16)   # NumBits (calibration via QG_NUMBITS)
         # NMT payload: control-channel message.
         wrb(1, 8)       # NMT message id = 1 (NMT_Welcome)
         # v42.4 (23:27 run): the channel reader exhausts the bunch body
@@ -743,7 +787,7 @@ class GOSGateProtocol(QuicConnectionProtocol):
         # calibrates the exact layout.
         wrb(0, 256)     # 32B of NMT fields (to be calibrated)
         log(f"UE-REL: body_bits={len(body_bits)} numbits_field={numbits_field} "
-            f"offset=0(v43.1-reverted) bOpen=1 bReliable=1 ChName=0")
+            f"v45.2-exact-v42.4-layout bOpen=1 bReliable=0 ChName=0")
         while len(body_bits) % 8:
             body_bits.append(0)
         body = bytearray()
@@ -779,8 +823,8 @@ class GOSGateProtocol(QuicConnectionProtocol):
         out += bytes(body)
         log(f"UE-REL: cli_ack={cli_ack:#06x} cli_seq={cli_seq} (raw={raw:#06x}) "
             f"ack={ack} crafted_bunch={bytes(body).hex()}")
-        import snappy
-        return snappy.compress(bytes(out))
+        # v45: literal-only snappy (see snappy_compress_compat docstring).
+        return snappy_compress_compat(bytes(out))
 
     def _build_connect_gate(self):
         """CONNECT_GATE (msgID 103) -> Ds2Gate2DsConnect payload.

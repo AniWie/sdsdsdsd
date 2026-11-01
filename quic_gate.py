@@ -624,10 +624,6 @@ class GOSGateProtocol(QuicConnectionProtocol):
         out_bits.append(secret_id)
 
         if reply_type == 3 and getattr(self, "_last_resp_cookie", None) is not None:
-            # v37 (Kei-Luna): the Ack body is NOT a verbatim echo. The server
-            # must change it: Timestamp = -1.0 (LE double: 00 00 00 00 00 00
-            # F0 BF) and the first 4 cookie bytes cleared, remaining 16 kept
-            # from the client's Response.
             wr(struct.unpack("<Q", struct.pack("<d", -1.0))[0], 64)
             cookie_ack = bytearray(self._last_resp_cookie)
             cookie_ack[0:4] = b"\x00\x00\x00\x00"

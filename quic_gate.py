@@ -742,28 +742,61 @@ class GOSGateProtocol(QuicConnectionProtocol):
                 body_bits.append((v >> i) & 1)
 
 
-        import os as _os
-   
-        numbits_field = int(getattr(_os.environ, "QG_NUMBITS", "160") or 160)
-        challenge_str = b"ChallengeString01"       # 17 chars, ASCII
-        nmt_payload_bits = 8 + 8 + len(challenge_str) * 8 + 8   # = 160
-        wrb(0, 12)      # ChIndex(10)=0 + ChType(2)=0
-        wrb(1, 1)       # bOpen = 1
-        wrb(0, 9)       # flags (bClose/bDormant/bReliable=0/spares)
-        wrb(0, 8)       # ChName length = 0
-        # v48: bunch data length declaration (isolated variable test).
-        wrb(numbits_field, 16) if numbits_field >= 0 else None
-        # NMT_Challenge message:
-        wrb(3, 8)       # NMT message id = 3 (Challenge)
-        # FString body — UE net FString: length (incl. terminator) then
-        # chars. Provisional: 8-bit length + 8 bits per char + NUL.
-        wrb(len(challenge_str) + 1, 8)             # FString length (18)
+        def wrp(v):
+            while True:
+                g = v & 0x7F
+                v >>= 7
+                wrb(g | (0x80 if v else 0), 8)
+                if not v:
+                    return
+
+        challenge_str = b"ChallengeString01"           # 17 ASCII chars
+        # NMT_Challenge payload bits: 8 id + 32 len + 17*8 + 8 NUL = 184
+        nmt_payload_bits = 8 + 32 + len(challenge_str) * 8 + 8
+
+        wrb(1, 1)       # Open || Close = 1 (opening the control channel)
+        wrb(1, 1)       # Open = 1
+        wrb(0, 1)       # Close = 0
+        wrb(0, 1)       # ReplicationPaused = 0
+        wrb(1, 1)       # Reliable = 1 (control bunches are reliable)
+        wrp(0)          # ChannelIndex = 0 (packed, 1 bit)
+        wrb(0, 1)       # HasPackageMapExports = 0
+        wrb(0, 1)       # HasMustBeMappedGuids = 0
+        wrb(0, 1)       # Partial = 0
+        wrb(0, 11)      # ChannelSequence = 0 (Max=2048 => 11 bits)
+        # ChannelName: hardcoded flag + packed index 255 (control)
+        wrb(1, 1)       # hardcoded name
+        wrp(255)        # packed 255
+        wrb(nmt_payload_bits, 13)   # PayloadBits (Max=8192 => 13 bits)
+        # NMT_Challenge payload:
+        wrb(3, 8)       # message id = 3 (Challenge)
+        wrb(len(challenge_str) + 1, 32)                 # FString int32 len = 18
         for ch in challenge_str:
             wrb(ch, 8)
         wrb(0, 8)       # NUL terminator
-        log(f"UE-REL: body_bits={len(body_bits)} v48-numbits-test "
-            f"numbits={numbits_field} nmt_payload_bits={nmt_payload_bits} "
-            f"str_len={len(challenge_str)}")
+        log(f"UE-REL: body_bits={len(body_bits)} v49-keiluna-spec "
+            f"payload_bits={nmt_payload_bits} str_len={len(challenge_str)}")
+        # (byte conversion happens below, AFTER the v50 terminating bit
+        # is appended — see the v50 block.)
+        # v50 (14:18 tracer run insight): the trailing '01 01 01 01' bytes
+        # were POISONING the channel's parse. The channel reader consumes
+        # the stream as a sequence of bunches until the reader ends — our
+        # 32 extra set bits were parsed as a garbage 'next bunch', erroring
+        # at pos=limit and discarding the whole packet (hence the eternal
+        # frozen cli_ack with every layout we tried).
+        # Correct form (UE convention): bunch payload bits, then ONE
+        # terminating bit (the last set bit marks the packet's content
+        # end; trailing zero padding is stripped by the reader's tail
+        # cleaning). The dispatcher's ZeroLastByte check is satisfied by
+        # that same single 1-bit. The old multi-byte terminator padding
+        # was a workaround for the snappy copy-tag bug (23:21 run) —
+        # that bug is fixed (literal-only encoder) and the 14:18 tracer
+        # confirms full 46B delivery intact, so the workaround is now
+        # obsolete and harmful.
+        # NOTE: the earlier v49 block already byte-aligned body_bits and
+        # converted to `body` — those two steps are redone here because
+        # the terminating bit is appended to body_bits after them.
+        wrb(1, 1)       # the ONE terminating bit (last set bit of the stream)
         while len(body_bits) % 8:
             body_bits.append(0)
         body = bytearray()
@@ -772,33 +805,19 @@ class GOSGateProtocol(QuicConnectionProtocol):
             for j in range(8):
                 b |= body_bits[i * 8 + j] << j
             body.append(b)
-        # v42.1: the PacketHandler dispatcher reads the LAST byte of the
-        # packet FIRST (0x14235fb6e: movzx ecx, byte [rax+rcx-1]; test cl;
-        # je fail) — a trailing 0x00 is the 'ZeroLastByte' reject and our
-        # 15B reply ended in 0x00 (tracer: 'PH early ret failure' with no
-        # component processing at all). All good packets end nonzero
-        # (0x01/0x18/0xc0): the terminating bit. Pad the body to a
-        # nonzero last byte.
-        while len(body) < 8 or body[-1] == 0:
-            body.append(0x01 if len(body) % 4 == 0 else 0x00)
-        # recompute last byte: make sure it's nonzero
+        # Dispatcher safety: the last byte must be nonzero (ZeroLastByte
+        # reject at 0x14235fb6e). The terminating bit is the last set
+        # bit; if byte alignment left it in an earlier byte, add one
+        # explicit 0x01 tail byte. (The v42.1 'while pad' logic is
+        # intentionally NOT replicated — it produced the multi-byte
+        # garbage that poisoned the channel.)
         if body[-1] == 0:
-            body[-1] = 0x01
-        # v42.3 (23:21 run): the 26B packet's final 0x01 byte got LOST
-        # somewhere in the client's snappy/tunnel path (tracer: pv.bytes=25
-        # vs our 26; 'Received packet with 0's in last byte' -> ZeroLastByte
-        # close) while the earlier 18B packet's terminator survived. End
-        # with TWO 0x01 bytes so losing one still leaves a nonzero tail.
-        # v42.5 (23:32 run): the reliable component's +2-bit repack shifts
-        # our terminator bits and DROPS the overflow — our trailing
-        # '01 01 01' became '04 04 00' (last byte 0x00 => '0's in last
-        # byte' warning on every packet => NetFaultState QuotaLimit =>
-        # ZeroLastByte close). Two extra 0x01 bytes guarantee a set bit
-        # survives the shift in the final output byte.
-        body += b"\x01\x01\x01\x01"
+            body.append(0x01)
+        while len(body) < 8:
+            body.append(0x00)
         out += bytes(body)
         log(f"UE-REL: cli_ack={cli_ack:#06x} cli_seq={cli_seq} (raw={raw:#06x}) "
-            f"ack={ack} crafted_bunch={bytes(body).hex()}")
+            f"v50-single-term crafted_bunch={bytes(body).hex()}")
         # v45: literal-only snappy (see snappy_compress_compat docstring).
         return snappy_compress_compat(bytes(out))
 

@@ -653,25 +653,132 @@ class GOSGateProtocol(QuicConnectionProtocol):
         out += _s.pack("<H", self._rel_seq)
         self._rel_seq = (self._rel_seq + 1) & 0xFFFF
         out += payload[5:9]                  # history word: echo client's
-        # v39: raw echo of the client's data caused
-        # BunchHeaderOverflow/BunchDataOverflow on the client (20:36 run):
-        # the client's A-packet 'ff 4f 00 04 ...' decoded as a NZ bunch
-        # header gives Chunks=15 (+1=16, capped 8 dwords = 32B) while only
-        # 17 bytes remained -> overflow. The bunch parser (0x14406bbf0)
-        # reads [u32 LE: Ack:14|Seq:14|Chunks:4] + N dwords (cap 8).
-        # So for OUR outgoing data we must emit a VALID bunch: a header
-        # the parser accepts (Chunks small, Seq/Ack within the window) and
-        # one chunk of payload. Empirical iteration: log what the client
-        # sends next to calibrate the fields.
-        if len(data) >= 4:
-            body = data[4:]                  # chunk = client's data minus hdr
-            bunch = _s.pack("<I", (1 << 18) | (1 << 4) | 0)  # Ack=1 Seq=1 Chunks=0(+1)
-            out += bunch
-            out += body[:32]                 # one chunk dword row (cap)
-        else:
-            out += data                      # 2B packets: pass through
+        # v40: wire-crib analysis (20:56 run):
+        #   - The game EXE is packed (static strings/code don't match live
+        #     memory) — no offline disasm possible. Only wire bytes work.
+        #   - Client A-packets (21B): only byte[0] varies across retransmits
+        #     (ff/c9/76/ed) => byte0 = per-attempt CRC; bytes[1:] stable:
+        #     '4f 00 04 e0 bf 00 18 00 08 c8 e6 be 81 07 00 00 00 00 00 18'.
+        #   - byte[1]: A=0x4f, B(125B)=0x48, 2B-packets=0x0f/0x0e.
+        #     bits0-2 look like a 3-bit TYPE (A=7, B=0), bit6 = has-body.
+        #   - v38 (verbatim echo) -> BunchHeaderOverflow (client's own hdr
+        #     parses as Chunks=15 -> overflow), v39 (our bunch, no NZ hdr)
+        #     -> 'Failed to read PacketHeader' — so the client expects a
+        #     NZ 2-byte packet header [crc8][type byte] BEFORE the bunch,
+        #     which v39 dropped.
+        # Experiment E1: reconstruct the NZ header: type byte = client's
+        # byte[1] (0x4f style), crc byte = COPY the client's byte[0] (crc
+        # of unchanged content may stay valid), then a bunch with sane
+        # header (Chunks=1) carrying the client's own body. If crc is
+        # content-derived it survives since we only alter the bunch hdr.
+        # v41 (22:05 run breakthrough): the client's A-packet data[6:]
+        # '00 18 00 08 c8 e6 be 81 07 00 00 00 00 00 18' decodes as a UE
+        # bunch with LSB-first bits: ChIndex(10)=0, ChType(2)=2, bOpen=1,
+        # bClose/bDormant/bReliable=0 — THE CONTROL-CHANNEL OPEN BUNCH
+        # carrying NMT_Hello. The first 6 data bytes 'ff 4f 00 04 e0 bf'
+        # are the NZ driver packet header (crc + type + length/flags).
+        # v40 reached deep: 'String is too large' + 'Channel name
+        # serialization failed' — the client parsed our bunch structurally
+        # and tried to read ChName from our crafted bytes.
+        # E2: echo the client's NZ 6-byte header + its bunch VERBATIM.
+        # The client then sees its own valid control bunch coming back
+        # (ChIndex=0, bOpen) — watch what it does; if it accepts, the next
+        # step is crafting a proper server NMT_Welcome bunch.
+        # v42 (22:2x VEH-tracer run, the decisive dump): the tracer showed
+        # the client's reliable component TRANSFORMS our packet:
+        #   our '04 ack seq hist | data...'  ->
+        #   bunch '[Ack|Seq|Chunks] chunk0 | <2 bits><our data bits>'
+        # i.e. the bunch header IS GENERATED from our reliable ack/seq
+        # (bunch.ack = our seq, bunch.seq = 0, chunk0 = 0), and our DATA
+        # bits are re-emitted with 2 extra bits inserted at the head.
+        # The parse then walks: 32b hdr + 32b chunk + ChIndex(10) +
+        # ChType(2) + 8 flag bits (positions 64->84) + ChName FString
+        # (pos 84..111) — our echoed data failed in the ChName/NumBits
+        # region (SetError requested=8160).
+        # v42: craft the DATA as a proper server control bunch body:
+        #   ChIndex=0, ChType=0, bOpen=1, other flags 0, ChName len 0,
+        #   NumBits=0. Note: the 2 inserted bits shift our fields by +2,
+        # so we PREPEND 2 dummy bits to compensate (our bit2 lands where
+        # the parser expects bit0 of ChIndex... actually the parser's
+        # ChIndex starts at out bit 64 = our data bit -2: the inserted
+        # bits ARE part of its field stream. To keep ChIndex=0 we simply
+        # start our data with enough zero bits that ChIndex reads 0.
+        body_bits = []
+
+        def wrb(v, n):
+            for i in range(n):
+                body_bits.append((v >> i) & 1)
+
+        # v43.1 — REVERTED the v43 offset=62 before any run (pre-run
+        # fact-check): re-derivation from the 23:10 trace (the only run
+        # where bunch-parser positions were logged) shows the parser
+        # consumed output bits 0..63 (the component's own [Ack|Seq|Chunks]
+        # + chunk0 header) and the channel's bunch FIELDS start at output
+        # bit 64 = DATA section bit 0 = [1,1] (component-inserted) + our
+        # body bit 0. So fields belong at body bit 0 as in v42.6 — v43's
+        # +62 shift would have misplaced everything 62 bits too late.
+        # OPEN QUESTION (needs the one-shot hooks fixed to observe):
+        # the [1,1] prefix pollutes the low bits of the first field, so
+        # ChIndex reads >= 3 — yet no BunchBadChannelIndex ever fired.
+        # Field widths unconfirmed. Keep v42.6 layout; calibrate NumBits
+        # via QG_NUMBITS env (0 / 264 comparison run pair).
+        import os as _os
+        numbits_field = int(getattr(_os.environ, "QG_NUMBITS", "264") or 264)
+        wrb(0, 12)      # ChIndex(10)=0 + ChType(2)=0
+        wrb(1, 1)       # bOpen = 1
+        wrb(0, 1)       # bClose
+        wrb(0, 1)       # bDormant
+        wrb(1, 1)       # bReliable = 1 (control bunches are reliable in UE)
+        wrb(0, 6)       # bPartial/PInit/PFinal/spares
+        wrb(0, 8)       # ChName length = 0
+        wrb(numbits_field, 16)   # NumBits (calibration via QG_NUMBITS env)
+        # NMT payload: control-channel message.
+        wrb(1, 8)       # NMT message id = 1 (NMT_Welcome)
+        # v42.4 (23:27 run): the channel reader exhausts the bunch body
+        # (reader pos hits limit) before reading the NMT fields — the
+        # payload must be large enough for NMT_Welcome's field set
+        # (EngineNetVersion u32, NetCL u32, FGuid 16B, GameName FString,
+        # checksummed ...). Pad generously; zero-filled fields will drive
+        # a SPECIFIC 'wrong version' complaint in the game log, which
+        # calibrates the exact layout.
+        wrb(0, 256)     # 32B of NMT fields (to be calibrated)
+        log(f"UE-REL: body_bits={len(body_bits)} numbits_field={numbits_field} "
+            f"offset=0(v43.1-reverted) bOpen=1 bReliable=1 ChName=0")
+        while len(body_bits) % 8:
+            body_bits.append(0)
+        body = bytearray()
+        for i in range(len(body_bits) // 8):
+            b = 0
+            for j in range(8):
+                b |= body_bits[i * 8 + j] << j
+            body.append(b)
+        # v42.1: the PacketHandler dispatcher reads the LAST byte of the
+        # packet FIRST (0x14235fb6e: movzx ecx, byte [rax+rcx-1]; test cl;
+        # je fail) — a trailing 0x00 is the 'ZeroLastByte' reject and our
+        # 15B reply ended in 0x00 (tracer: 'PH early ret failure' with no
+        # component processing at all). All good packets end nonzero
+        # (0x01/0x18/0xc0): the terminating bit. Pad the body to a
+        # nonzero last byte.
+        while len(body) < 8 or body[-1] == 0:
+            body.append(0x01 if len(body) % 4 == 0 else 0x00)
+        # recompute last byte: make sure it's nonzero
+        if body[-1] == 0:
+            body[-1] = 0x01
+        # v42.3 (23:21 run): the 26B packet's final 0x01 byte got LOST
+        # somewhere in the client's snappy/tunnel path (tracer: pv.bytes=25
+        # vs our 26; 'Received packet with 0's in last byte' -> ZeroLastByte
+        # close) while the earlier 18B packet's terminator survived. End
+        # with TWO 0x01 bytes so losing one still leaves a nonzero tail.
+        # v42.5 (23:32 run): the reliable component's +2-bit repack shifts
+        # our terminator bits and DROPS the overflow — our trailing
+        # '01 01 01' became '04 04 00' (last byte 0x00 => '0's in last
+        # byte' warning on every packet => NetFaultState QuotaLimit =>
+        # ZeroLastByte close). Two extra 0x01 bytes guarantee a set bit
+        # survives the shift in the final output byte.
+        body += b"\x01\x01\x01\x01"
+        out += bytes(body)
         log(f"UE-REL: cli_ack={cli_ack:#06x} cli_seq={cli_seq} (raw={raw:#06x}) "
-            f"ack={ack} data_len={len(payload)-9} reply={bytes(out).hex()}")
+            f"ack={ack} crafted_bunch={bytes(body).hex()}")
         import snappy
         return snappy.compress(bytes(out))
 

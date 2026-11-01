@@ -10,8 +10,8 @@
 //       -e tracer_entry -lkernel32 -luser32
 #include <windows.h>
 
-#define OUT_PATH "D:\\Games\\WeiMianYe\\bypass\\logs\\vtttttttd2.out"
-#define MAX_HITS 128
+#define OUT_PATH "D:\\Games\\WeiMianYe\\bypass\\logs\\vtttttttg.out"
+#define MAX_HITS 1024
 #define EXPORT __declspec(dllexport)
 
 enum {
@@ -40,6 +40,8 @@ enum {
     VALIDATOR_BITREAD,
     VALIDATOR_ENTRY,
     TYPE_COMPARE,
+    BUNCH_PARSER_ENTRY,
+    PH_CALL_INCOMING40,
     NSITES
 };
 
@@ -69,12 +71,14 @@ static const unsigned long long SITES[NSITES] = {
     0x14409751b, // validator SHORT-branch bit read: r8 = bit index
     0x144096fd0, // StatelessConnect validator entry: rdx = its reader
     0x14408e58c, // cmp dl(type),r15b(expected) - THE accept compare
+    0x14406bbf0, // NZ bunch parser entry: rcx=component? rdx=struct, r8=reader
+    0x14235fc69, // PH call [component_vtable+0x40] Incoming per-component
 };
 
 static const unsigned char EXPECTED[NSITES] = {
     0xc3, 0xc3, 0xe9, 0x32, 0xe8, 0x40, 0x84, 0xe8,
     0x48, 0x40, 0x48, 0x48, 0xff, 0xc3, 0x41, 0xe8,
-    0xff, 0x40, 0x41, 0x0f, 0x49, 0x48, 0x40, 0x48, 0x41
+    0xff, 0x40, 0x41, 0x0f, 0x49, 0x48, 0x40, 0x48, 0x41, 0x48, 0xff
 };
 
 static const char *const SITE_NAMES[NSITES] = {
@@ -102,7 +106,9 @@ static const char *const SITE_NAMES[NSITES] = {
     "SetError body 2 entry",
     "Validator bit read",
     "Validator entry",
-    "Type compare"
+    "Type compare",
+    "NZ bunch parser ENTRY",
+    "PH call component+0x40 Incoming"
 };
 
 static unsigned char orig[NSITES];
@@ -117,11 +123,66 @@ static unsigned long long g_guard_page;      // unused (guard pages abandoned)
 static DWORD g_guard_orig_prot;              // unused
 static unsigned char *g_guard_reader;        // reader being watched
 static volatile long g_dr_armed;
+// v44: background re-arm thread. The old design relied on the trap-flag
+// single-step (EFlags |= 0x100) to re-write the 0xCC right after the
+// handler; the game's own exception machinery sometimes swallows that
+// single-step, leaving a site disarmed forever (why the bunch-parser
+// hook went silent after the first sessions). A dedicated thread
+// re-arms any disarmed site every 2ms under the same lock the VEH uses,
+// making ALL hooks effectively permanent.
+static HANDLE g_rearm_thread;
+static volatile long g_rearm_stop;
+
+// v44.1: the 04:00 run proved that keeping int3 on the HOT-PATH sites
+// (PH loop/cmp/count fire on EVERY packet) plus the per-write disk
+// flush wrecked the reliable layer (cli_ack frozen, 30s timeout).
+// Only the 4 diagnostic sites we actually need stay hooked:
+static const int ARM_SITES[] = {
+    BUNCH_PARSER_ENTRY,     // 0x14406bbf0 — where the channel starts parsing
+    SC_INCOMING_ENTRY_ADDR, // 0x14403e490 — SC component incoming (reader pos)
+    SC_PARSER_RETURN,       // 0x14403eb24 — parsed [ack seq chunks] + reader pos
+    SC_CONTROL_ENTRY,       // 0x14403e800 — control entry (r8/r9 + reader)
+};
+#define N_ARM_SITES (int)(sizeof(ARM_SITES) / sizeof(ARM_SITES[0]))
+
+static void rearm_site(int i) {
+    unsigned char *p = (unsigned char *)SITES[i];
+    DWORD oldp;
+    if (armed[i])
+        return;
+    VirtualProtect(p, 1, PAGE_EXECUTE_READWRITE, &oldp);
+    orig[i] = *p;          // refresh orig (should equal EXPECTED)
+    *p = 0xCC;
+    VirtualProtect(p, 1, oldp, &oldp);
+    armed[i] = 1;
+}
+
+static DWORD WINAPI rearm_thread(LPVOID param) {
+    (void)param;
+    while (!g_rearm_stop) {
+        if (hit_count < MAX_HITS) {
+            EnterCriticalSection(&g_lock);
+            for (int k = 0; k < N_ARM_SITES; k++)
+                rearm_site(ARM_SITES[k]);
+            LeaveCriticalSection(&g_lock);
+        }
+        Sleep(5);
+    }
+    return 0;
+}
 
 static void wout(const char *s, int n) {
     DWORD w;
     WriteFile(g_out, s, n, &w, NULL);
-    FlushFileBuffers(g_out);
+    // v44.1: FlushFileBuffers REMOVED. The v44 run proved it breaks the
+    // game's netcode: every wstr forced a synchronous disk flush while
+    // holding g_lock on the network thread; ~100 flushes per packet
+    // stalled the thread long enough (100-200ms) for the reliable
+    // component's RTT window to expire our replies -> cli_ack frozen at
+    // 0xfffc -> client never advanced -> 30s timeout (04:00 run, log
+    // vtttttttf.out: 1033 hits/540KB in 30s). OS write-behind is
+    // sufficient; the file is closed (flushed) at DETACH and the data
+    // is readable while open (FILE_SHARE_READ).
 }
 
 static void wstr(const char *s) {
@@ -267,11 +328,18 @@ static LONG CALLBACK veh(struct _EXCEPTION_POINTERS *ep) {
             return EXCEPTION_CONTINUE_SEARCH;
 
         EnterCriticalSection(&g_lock);
+        // v44: identical byte-restore semantics as the proven v41 build
+        // (restore orig byte; resume exactly as before — NO RIP rewinding,
+        // NO TF single-step). The ONLY change: the site is left disarmed
+        // and a dedicated background thread re-writes the 0xCC within
+        // 2ms, so hooks never stay dead (the old TF-based re-arm was
+        // swallowed by the game's exception machinery and silently
+        // killed sites after the first sessions).
         p = (unsigned char *)SITES[site];
         VirtualProtect(p, 1, PAGE_EXECUTE_READWRITE, &oldp);
         *p = orig[site];
         VirtualProtect(p, 1, oldp, &oldp);
-        armed[site] = 0;
+        armed[site] = 0;   // re-arm thread will re-patch within 2ms
         InterlockedIncrement(&hit_count);
 
         wstr("=== HIT tid="); wnum(GetCurrentThreadId());
@@ -496,9 +564,42 @@ static LONG CALLBACK veh(struct _EXCEPTION_POINTERS *ep) {
                 }
                 wstr("\n");
             }
+        } else if (site == BUNCH_PARSER_ENTRY) {
+            // 0x14406bbf0: NZ bunch parser entry.
+            // args: rcx=[rsi+0x1a38] ctx, rdx=24B out-struct (rbp-0x80), r8=reader(r15)
+            wstr("  NZ BUNCH PARSER entry: rcx="); whex64(ctx->Rcx);
+            wstr(" rdx(out)="); whex64(ctx->Rdx);
+            wstr(" r8(reader)="); whex64(ctx->R8);
+            wstr("\n");
+            if (ctx->R8) {
+                dump_reader((const unsigned char *)ctx->R8);
+                // also dump 64 bytes of reader data at current bit pos
+                // reader layout (from earlier dumps): +0x90 data ptr? no —
+                // the FBitReader this-pointer layout: [rax]=vtable,
+                // reader+0xa0 limit, +0xa8 pos, +0x90 data? verified in
+                // HANDSHAKE_ANALYSIS: [rdx+0x90] buffer, +0xa0 limit,
+                // +0xa8 pos.
+                const unsigned char *rd = (const unsigned char *)ctx->R8;
+                unsigned long long pos = *(const unsigned long long *)(rd + 0xa8);
+                unsigned long long lim = *(const unsigned long long *)(rd + 0xa0);
+                const unsigned char *dat = *(const unsigned char **)(rd + 0x90);
+                if (dat && lim > pos && lim - pos >= 8) {
+                    unsigned long long first = pos >> 3;
+                    wstr("  bunch-in bytes from bit "); wnum(pos); wstr(":\n  ");
+                    for (int i = 0; i < 40 && first + i < (lim + 7) / 8; i++) {
+                        whex8(dat[first + i]); wstr(" ");
+                    }
+                    wstr("\n");
+                }
+            }
+        } else if (site == PH_CALL_INCOMING40) {
+            // 0x14235fc69: call [component_vtable+0x40] — per-component
+            // Incoming dispatch. rax=vtable, rcx=component(rdi), r15/rdx=reader.
+            wstr("  PH component Incoming: vtable="); whex64(ctx->Rax);
+            wstr(" comp(rcx)="); whex64(ctx->Rcx);
+            wstr(" target="); whex64(*(const unsigned long long *)(ctx->Rax + 0x40));
+            wstr("\n");
         } else if (site == VALIDATOR_ENTRY) {
-            // 0x144096fd0(rcx=component, rdx=reader, r8=out-struct):
-            // dump the validator's OWN reader (limit/pos/data) + struct.
             wstr("  VALIDATOR entry: rcx="); whex64(ctx->Rcx);
             wstr(" rdx(reader)="); whex64(ctx->Rdx);
             wstr(" r8(struct)="); whex64(ctx->R8);
@@ -544,7 +645,11 @@ static LONG CALLBACK veh(struct _EXCEPTION_POINTERS *ep) {
         }
         dump_stack(ctx->Rsp);
 
-        ctx->EFlags |= 0x100;
+        // v44: NO trap-flag single-step re-arm — that mechanism is what
+        // silently lost sites when the game swallowed the single-step.
+        // The dedicated rearm_thread re-patches within 2ms. (DR0 write
+        // traps are still handled in the SINGLE_STEP branch below; the
+        // DR0 arm happens in the PH loop-entry handler.)
         LeaveCriticalSection(&g_lock);
         return EXCEPTION_CONTINUE_EXECUTION;
     }
@@ -572,21 +677,9 @@ static LONG CALLBACK veh(struct _EXCEPTION_POINTERS *ep) {
             LeaveCriticalSection(&g_lock);
             return EXCEPTION_CONTINUE_EXECUTION;
         }
-        if (hit_count < MAX_HITS) {
-            EnterCriticalSection(&g_lock);
-            for (int i = 0; i < NSITES; i++) {
-                if (!armed[i]) {
-                    unsigned char *p = (unsigned char *)SITES[i];
-                    DWORD oldp;
-                    VirtualProtect(p, 1, PAGE_EXECUTE_READWRITE, &oldp);
-                    orig[i] = *p;
-                    *p = 0xCC;
-                    VirtualProtect(p, 1, oldp, &oldp);
-                    armed[i] = 1;
-                }
-            }
-            LeaveCriticalSection(&g_lock);
-        }
+        // v44: stray single-steps (including the game's own TF usage) are
+        // now harmless: just clear TF and continue. Site re-arm is the
+        // rearm_thread's job, not the TF handler's.
         ctx->EFlags &= ~0x100;
         return EXCEPTION_CONTINUE_EXECUTION;
     }
@@ -619,7 +712,12 @@ EXPORT BOOL WINAPI tracer_entry(HINSTANCE h, DWORD reason, LPVOID r) {
             CloseHandle(g_out);
             return FALSE;
         }
-        for (int i = 0; i < NSITES; i++) {
+        // v44.1: patch ONLY the 4 diagnostic sites. The other 23 hot-path
+        // sites (PH loop etc., firing every packet) stay pristine — the
+        // v44 run showed patching them all + disk-flush-per-write froze
+        // the reliable layer (cli_ack stuck at 0xfffc, 30s timeout).
+        for (int k = 0; k < N_ARM_SITES; k++) {
+            int i = ARM_SITES[k];
             unsigned char *p = (unsigned char *)SITES[i];
             DWORD oldp;
             VirtualProtect(p, 1, PAGE_EXECUTE_READWRITE, &oldp);
@@ -628,10 +726,19 @@ EXPORT BOOL WINAPI tracer_entry(HINSTANCE h, DWORD reason, LPVOID r) {
             VirtualProtect(p, 1, oldp, &oldp);
             armed[i] = 1;
         }
-        wstr("veh_tracer3 armed: PH returns + SC false paths + header parser\n");
+        // v44: persistent re-arm thread (fixes the one-shot hook loss).
+        g_rearm_stop = 0;
+        g_rearm_thread = CreateThread(NULL, 0, rearm_thread, NULL, 0, NULL);
+        wstr("veh_tracer3 v44.1 armed: 4 diagnostic sites only, no flush\n");
         return TRUE;
     }
     if (reason == DLL_PROCESS_DETACH) {
+        if (g_rearm_thread) {
+            g_rearm_stop = 1;
+            WaitForSingleObject(g_rearm_thread, 2000);
+            CloseHandle(g_rearm_thread);
+            g_rearm_thread = NULL;
+        }
         for (int i = 0; i < NSITES; i++) {
             if (armed[i]) {
                 unsigned char *p = (unsigned char *)SITES[i];
@@ -644,7 +751,7 @@ EXPORT BOOL WINAPI tracer_entry(HINSTANCE h, DWORD reason, LPVOID r) {
         }
         if (g_veh)
             RemoveVectoredExceptionHandler(g_veh);
-        wstr("veh_tracer3 detached\n");
+        wstr("veh_tracer3 v44 detached\n");
         CloseHandle(g_out);
     }
     return TRUE;

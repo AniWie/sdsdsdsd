@@ -741,49 +741,29 @@ class GOSGateProtocol(QuicConnectionProtocol):
             for i in range(n):
                 body_bits.append((v >> i) & 1)
 
-        # v43.1 — REVERTED the v43 offset=62 before any run (pre-run
-        # fact-check): re-derivation from the 23:10 trace (the only run
-        # where bunch-parser positions were logged) shows the parser
-        # consumed output bits 0..63 (the component's own [Ack|Seq|Chunks]
-        # + chunk0 header) and the channel's bunch FIELDS start at output
-        # bit 64 = DATA section bit 0 = [1,1] (component-inserted) + our
-        # body bit 0. So fields belong at body bit 0 as in v42.6 — v43's
-        # +62 shift would have misplaced everything 62 bits too late.
-        # OPEN QUESTION (needs the one-shot hooks fixed to observe):
-        # the [1,1] prefix pollutes the low bits of the first field, so
-        # ChIndex reads >= 3 — yet no BunchBadChannelIndex ever fired.
-        # Field widths unconfirmed. Keep v42.6 layout; calibrate NumBits
-        # via QG_NUMBITS env (0 / 264 comparison run pair).
+
         import os as _os
-        # v45.2: DEFAULT = the EXACT wire-proven accepted layout (v42.4,
-        # 23:45 run — the only config where the client ever acked our
-        # reliable packets, cli_ack 0x0004->0x0008->0x0018):
-        #   ChIndex(10)=0, ChType(2)=0, bOpen(12)=1, 9 flag bits 0,
-        #   ChName(8)=0, NMT id=1 at bit 30, 64 bits NMT fields,
-        #   3 terminator bytes '01 01 01'. NO NumBits field, bReliable=0.
-        #   Body hex: '00 10 00 40 00*33 01 01 01' (43B).
-        # QG_NUMBITS: -1 (default) = this exact layout; >=0 inserts a
-        # 16-bit NumBits field before the NMT id (calibration only —
-        # untested, correlates with cli_ack freeze in v42.6-43.1).
-        numbits_field = int(getattr(_os.environ, "QG_NUMBITS", "-1") or -1)
+   
+        numbits_field = int(getattr(_os.environ, "QG_NUMBITS", "160") or 160)
+        challenge_str = b"ChallengeString01"       # 17 chars, ASCII
+        nmt_payload_bits = 8 + 8 + len(challenge_str) * 8 + 8   # = 160
         wrb(0, 12)      # ChIndex(10)=0 + ChType(2)=0
         wrb(1, 1)       # bOpen = 1
-        wrb(0, 9)       # flags: bClose/bDormant/bReliable=0/spares (v42.4 width)
+        wrb(0, 9)       # flags (bClose/bDormant/bReliable=0/spares)
         wrb(0, 8)       # ChName length = 0
-        if numbits_field >= 0:
-            wrb(numbits_field, 16)   # NumBits (calibration via QG_NUMBITS)
-        # NMT payload: control-channel message.
-        wrb(1, 8)       # NMT message id = 1 (NMT_Welcome)
-        # v42.4 (23:27 run): the channel reader exhausts the bunch body
-        # (reader pos hits limit) before reading the NMT fields — the
-        # payload must be large enough for NMT_Welcome's field set
-        # (EngineNetVersion u32, NetCL u32, FGuid 16B, GameName FString,
-        # checksummed ...). Pad generously; zero-filled fields will drive
-        # a SPECIFIC 'wrong version' complaint in the game log, which
-        # calibrates the exact layout.
-        wrb(0, 256)     # 32B of NMT fields (to be calibrated)
-        log(f"UE-REL: body_bits={len(body_bits)} numbits_field={numbits_field} "
-            f"v45.2-exact-v42.4-layout bOpen=1 bReliable=0 ChName=0")
+        # v48: bunch data length declaration (isolated variable test).
+        wrb(numbits_field, 16) if numbits_field >= 0 else None
+        # NMT_Challenge message:
+        wrb(3, 8)       # NMT message id = 3 (Challenge)
+        # FString body — UE net FString: length (incl. terminator) then
+        # chars. Provisional: 8-bit length + 8 bits per char + NUL.
+        wrb(len(challenge_str) + 1, 8)             # FString length (18)
+        for ch in challenge_str:
+            wrb(ch, 8)
+        wrb(0, 8)       # NUL terminator
+        log(f"UE-REL: body_bits={len(body_bits)} v48-numbits-test "
+            f"numbits={numbits_field} nmt_payload_bits={nmt_payload_bits} "
+            f"str_len={len(challenge_str)}")
         while len(body_bits) % 8:
             body_bits.append(0)
         body = bytearray()
